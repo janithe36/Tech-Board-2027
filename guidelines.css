@@ -1,0 +1,1021 @@
+/* =============================================================
+   TECH AAKRITI 2027 — OFFICIAL GUIDELINES & RULEBOOK STYLESHEET
+   Aesthetic: Obsidian Black, Crimson Neon Accents, Cyber-Noir Grid
+   Architectural Typography, Interactive Filters & Accordions
+   ============================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #050507;
+  --color-bg-card: rgba(14, 14, 20, 0.78);
+  --color-border-card: rgba(255, 255, 255, 0.08);
+  --color-red: #d91424;
+  --color-red-glow: rgba(217, 20, 36, 0.45);
+  --color-red-soft: rgba(217, 20, 36, 0.12);
+  --color-text-main: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.65);
+  --color-text-dim: rgba(255, 255, 255, 0.4);
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.is-loading {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+/* Background canvas */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------
+   FULLSCREEN MENU OVERLAY HIDDEN WHEN CLOSED
+   ------------------------------------------------------------- */
+.fullscreen-menu:not(.is-menu-open) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.fullscreen-menu.is-menu-open {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Page wrapper */
+.guidelines-page-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  padding: 8.5rem 2rem 5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .guidelines-page-wrapper {
+    padding: 6.5rem 1.25rem 4rem;
+  }
+}
+
+/* -------------------------------------------------------------
+   PAGE HEADER
+   ------------------------------------------------------------- */
+.guidelines-header-section {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.guidelines-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--color-red);
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  background: rgba(217, 20, 36, 0.08);
+  border: 1px solid rgba(217, 20, 36, 0.25);
+  padding: 0.35rem 0.75rem;
+  border-radius: 3px;
+}
+
+.guidelines-meta-tag .tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-red);
+  box-shadow: 0 0 8px rgba(217, 20, 36, 0.9);
+}
+
+.guidelines-main-heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.8rem, 6.5vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+}
+
+.guidelines-main-heading span.accent-text {
+  color: var(--color-red);
+  text-shadow: 0 0 28px rgba(217, 20, 36, 0.45);
+}
+
+.guidelines-subtext-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.guidelines-subtext {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 780px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.guidelines-actions-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.guidelines-stats-badge {
+  font-family: "DM Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 0.95rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.download-rulebook-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(217, 20, 36, 0.9), rgba(160, 10, 24, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1.1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 4px 18px rgba(217, 20, 36, 0.35);
+}
+
+.download-rulebook-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(217, 20, 36, 0.55);
+  background: #ff1e38;
+}
+
+.download-rulebook-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* -------------------------------------------------------------
+   STICKY FILTER / SECTION NAVIGATION & SEARCH BAR
+   ------------------------------------------------------------- */
+.guidelines-control-bar {
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  background: rgba(5, 5, 7, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.guidelines-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.guidelines-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.22s ease;
+  text-transform: uppercase;
+}
+
+.tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tab-btn.active {
+  color: #ffffff;
+  background: rgba(217, 20, 36, 0.18);
+  border-color: rgba(217, 20, 36, 0.5);
+  box-shadow: 0 0 12px rgba(217, 20, 36, 0.25);
+}
+
+.guidelines-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 240px;
+  flex-grow: 1;
+  max-width: 320px;
+}
+
+@media (max-width: 600px) {
+  .guidelines-search-box {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+.guidelines-search-box input {
+  width: 100%;
+  background: rgba(15, 15, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.45rem 2rem 0.45rem 2.2rem;
+  color: #ffffff;
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guidelines-search-box input:focus {
+  border-color: var(--color-red);
+  box-shadow: 0 0 10px rgba(217, 20, 36, 0.35);
+}
+
+.guidelines-search-box .search-icon {
+  position: absolute;
+  left: 0.75rem;
+  width: 14px;
+  height: 14px;
+  stroke: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.guidelines-search-box .clear-btn {
+  position: absolute;
+  right: 0.65rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem;
+}
+
+.guidelines-search-box .clear-btn:hover {
+  color: #ffffff;
+}
+
+/* -------------------------------------------------------------
+   SECTIONS STYLING
+   ------------------------------------------------------------- */
+.guidelines-section {
+  margin-bottom: 4.5rem;
+  scroll-margin-top: 140px;
+}
+
+.section-header-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+}
+
+.section-index {
+  font-family: "DM Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-red);
+  letter-spacing: 0.12em;
+}
+
+.section-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.section-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------------
+   1. GENERAL PROTOCOL CARDS
+   ------------------------------------------------------------- */
+.general-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .general-rules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rule-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: 6px;
+  padding: 1.4rem;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.rule-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-red);
+  transition: width 0.35s ease;
+  box-shadow: 0 0 10px var(--color-red);
+}
+
+.rule-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(217, 20, 36, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(217, 20, 36, 0.25);
+}
+
+.rule-card:hover::before {
+  width: 100%;
+}
+
+.rule-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.rule-card-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: rgba(217, 20, 36, 0.12);
+  border: 1px solid rgba(217, 20, 36, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+.rule-card-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.rule-card-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* -------------------------------------------------------------
+   2. POINTS TABLE & FORMULA
+   ------------------------------------------------------------- */
+.table-wrapper {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.points-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.points-table th {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.points-table td {
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--color-text-muted);
+  vertical-align: middle;
+}
+
+.points-table tr:hover td {
+  background: rgba(217, 20, 36, 0.06);
+  color: #ffffff;
+}
+
+.event-name-cell {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.cat-badge-cell {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+.points-value-cell {
+  font-family: "DM Mono", monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-red);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Mass attendance calculation callout */
+.formula-callout-box {
+  background: rgba(18, 18, 26, 0.7);
+  border: 1px solid rgba(217, 20, 36, 0.3);
+  border-radius: 6px;
+  padding: 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .formula-callout-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formula-left h4 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.formula-left p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.formula-code {
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px dashed rgba(217, 20, 36, 0.4);
+  padding: 0.65rem 0.9rem;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.formula-right-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formula-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-family: "DM Mono", monospace;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+}
+
+.formula-item span.str {
+  font-weight: 700;
+  color: var(--color-red);
+}
+
+/* -------------------------------------------------------------
+   3. DISPUTE RESOLUTION HIERARCHY
+   ------------------------------------------------------------- */
+.hierarchy-chain-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  position: relative;
+}
+
+.hierarchy-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: 6px;
+  padding: 1.4rem;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.hierarchy-card:hover {
+  border-color: rgba(217, 20, 36, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(217, 20, 36, 0.3);
+}
+
+.hierarchy-level-tag {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-red);
+  background: rgba(217, 20, 36, 0.1);
+  border: 1px solid rgba(217, 20, 36, 0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+
+.hierarchy-role-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.hierarchy-scope-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.hierarchy-warning-banner {
+  margin-top: 1.5rem;
+  background: rgba(217, 20, 36, 0.08);
+  border: 1px solid rgba(217, 20, 36, 0.35);
+  border-radius: 6px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hierarchy-warning-banner svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+.hierarchy-warning-text {
+  font-size: 0.85rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------------
+   4. EVENT RULEBOOKS ACCORDION
+   ------------------------------------------------------------- */
+.event-rules-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.event-cat-filter-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.event-cat-filter-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.event-cat-filter-btn.active {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(217, 20, 36, 0.4);
+}
+
+.event-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion-item {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.accordion-item.is-open {
+  border-color: rgba(217, 20, 36, 0.4);
+  background: rgba(18, 18, 26, 0.9);
+}
+
+.accordion-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  gap: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.accordion-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.accordion-cat-tag {
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-red);
+  background: rgba(217, 20, 36, 0.1);
+  border: 1px solid rgba(217, 20, 36, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.accordion-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.accordion-tagline {
+  font-size: 0.82rem;
+  color: var(--color-text-dim);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .accordion-tagline {
+    display: none;
+  }
+}
+
+.accordion-chevron {
+  width: 20px;
+  height: 20px;
+  stroke: rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.2s ease;
+  flex-shrink: 0;
+}
+
+.accordion-item.is-open .accordion-chevron {
+  transform: rotate(180deg);
+  stroke: var(--color-red);
+}
+
+.accordion-body {
+  padding: 0 1.5rem 1.5rem;
+  display: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.25rem;
+}
+
+.accordion-item.is-open .accordion-body {
+  display: block;
+}
+
+.event-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.detail-block {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+}
+
+.detail-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-red);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.detail-val {
+  font-size: 0.85rem;
+  color: #ffffff;
+  line-height: 1.45;
+}
+
+.special-rules-section {
+  background: rgba(217, 20, 36, 0.04);
+  border: 1px solid rgba(217, 20, 36, 0.2);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+}
+
+.special-rules-title {
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.special-rules-title::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 900;
+}
+
+.special-rules-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.special-rules-list li {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.special-rules-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.25rem;
+  color: var(--color-red);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* -------------------------------------------------------------
+   5. MALPRACTICE & CODE OF CONDUCT
+   ------------------------------------------------------------- */
+.malpractice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.malpractice-card {
+  background: rgba(18, 10, 12, 0.85);
+  border: 1px solid rgba(217, 20, 36, 0.25);
+  border-radius: 6px;
+  padding: 1.35rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.malpractice-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 20, 36, 0.6);
+  box-shadow: 0 8px 24px -6px rgba(217, 20, 36, 0.35);
+}
+
+.malpractice-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.malpractice-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.malpractice-penalty {
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--color-red);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.malpractice-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------------
+   6. UNDERTAKING & COMMITTEE SIGN-OFF
+   ------------------------------------------------------------- */
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.committee-card-block {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: 6px;
+  padding: 1.6rem;
+  backdrop-filter: blur(12px);
+}
+
+.committee-block-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.committee-block-title .title-accent {
+  color: var(--color-red);
+}
+
+.committee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.committee-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.entry-name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.entry-role {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.04em;
+}
+
+/* -------------------------------------------------------------
+   SITE FOOTER (UNIFIED ACROSS FEST PLATFORM)
+   ------------------------------------------------------------- */
+.site-footer {
+  margin-top: 2rem;
+}
+
+

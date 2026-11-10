@@ -2441,8 +2441,16 @@ p {
   overflow: hidden;
 }
 
+.fullscreen-menu:not(.is-menu-open) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 .fullscreen-menu.is-menu-open {
-  pointer-events: auto;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 .menu-bg {
