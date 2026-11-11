@@ -1,0 +1,324 @@
+/* =============================================================
+   AIT TECHNICAL BOARD — ABOUT US STYLESHEET
+   Apex Student Technical Governing Body • Army Institute of Technology, Pune
+   ============================================================= */
+
+@import "./styles.css";
+
+.about-page-body {
+  background-color: #050507;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 20, 36, 0.45) transparent;
+}
+
+.about-page-wrapper {
+  position: relative;
+  z-index: 10;
+  padding: 8rem clamp(1.5rem, 5vw, 4.5rem) 5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.about-hero-section {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+}
+
+.about-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-red, #d91424);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  background: rgba(217, 20, 36, 0.08);
+  border: 1px solid rgba(217, 20, 36, 0.25);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+}
+
+.about-main-heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.about-main-heading .accent-text {
+  color: var(--color-red, #d91424);
+}
+
+.about-hero-desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Overview Card */
+.about-overview-card {
+  background: linear-gradient(135deg, rgba(18, 18, 26, 0.75) 0%, rgba(10, 10, 14, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  margin-bottom: 5rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+}
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.pillar-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.85rem;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+  border-color: rgba(217, 20, 36, 0.4);
+  transform: translateY(-4px);
+  background: rgba(217, 20, 36, 0.03);
+}
+
+.pillar-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.pillar-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Two Major Events Section */
+.about-events-section {
+  margin-bottom: 5rem;
+}
+
+.about-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-section-tag {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--color-red, #d91424);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.about-section-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.about-events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-events-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fest-card {
+  border-radius: 1.25rem;
+  padding: clamp(2rem, 3.5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.fest-card.solutions-card {
+  background: linear-gradient(145deg, rgba(30, 8, 12, 0.8) 0%, rgba(12, 12, 18, 0.9) 100%);
+  border: 1px solid rgba(217, 20, 36, 0.4);
+}
+
+.fest-card.tech-aakriti-card {
+  background: linear-gradient(145deg, rgba(16, 20, 26, 0.8) 0%, rgba(12, 12, 18, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fest-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+  width: fit-content;
+}
+
+.fest-badge.solutions-badge {
+  background: rgba(217, 20, 36, 0.2);
+  color: #ff3344;
+  border: 1px solid rgba(217, 20, 36, 0.4);
+}
+
+.fest-badge.tech-aakriti-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.fest-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.fest-desc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.fest-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.fest-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "DM Mono", monospace;
+}
+
+.fest-features li svg {
+  color: var(--color-red, #d91424);
+  flex-shrink: 0;
+}
+
+.fest-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.fest-btn.btn-solutions {
+  background: var(--color-red, #d91424);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(217, 20, 36, 0.35);
+}
+
+.fest-btn.btn-solutions:hover {
+  background: #ff1c30;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(217, 20, 36, 0.5);
+}
+
+.fest-btn.btn-tech-aakriti {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.fest-btn.btn-tech-aakriti:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Institutional Block */
+.about-institution-card {
+  background: rgba(14, 14, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1.25rem;
+  padding: clamp(2rem, 3.5vw, 3rem);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-institution-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.about-institution-desc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.about-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}

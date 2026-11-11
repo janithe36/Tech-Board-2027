@@ -535,7 +535,7 @@ let searchQuery = "";
 // =============================================================
 // INITIALIZE EVENTS PAGE
 // =============================================================
-document.addEventListener("DOMContentLoaded", () => {
+function initEventsPage() {
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const catParam = urlParams.get("category");
@@ -545,15 +545,39 @@ document.addEventListener("DOMContentLoaded", () => {
       currentCategory = initialCat;
     }
     sessionStorage.removeItem("innov8_selected_category");
-  } catch (err) {}
+  } catch (err) {
+    console.warn("Category param init warning:", err);
+  }
 
-  initPageEntranceTransition();
-  initBackgroundCanvas();
+  try {
+    initPageEntranceTransition();
+  } catch (err) {
+    console.warn("Entrance transition error:", err);
+    document.body.style.clipPath = "none";
+  }
+
+  try {
+    initBackgroundCanvas();
+  } catch (err) {
+    console.warn("Background canvas error:", err);
+  }
+
   renderEvents();
   setupFilterControls();
   setupModal();
-  animatePageEntrance();
-});
+
+  try {
+    animatePageEntrance();
+  } catch (err) {
+    console.warn("Page entrance animation error:", err);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initEventsPage);
+} else {
+  initEventsPage();
+}
 
 // =============================================================
 // 0. CIRCULAR PAGE ENTRANCE TRANSITION
@@ -685,11 +709,20 @@ function renderEvents() {
 
   if (filtered.length === 0) {
     grid.innerHTML = "";
-    if (noResults) noResults.style.display = "flex";
+    if (noResults) {
+      noResults.classList.add("is-active");
+      noResults.style.display = "flex";
+    }
+    if (countBadge) {
+      countBadge.textContent = `SHOWING 0 OF ${EVENTS_DATA.length}`;
+    }
     return;
   }
 
-  if (noResults) noResults.style.display = "none";
+  if (noResults) {
+    noResults.classList.remove("is-active");
+    noResults.style.display = "none";
+  }
 
   grid.innerHTML = filtered
     .map(

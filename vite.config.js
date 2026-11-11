@@ -13,6 +13,7 @@ export default defineConfig({
 
           // Redirect *.html to clean URLs
           const cleanRoutes = [
+            "about",
             "solutions",
             "tech-aakriti",
             "events",
@@ -55,6 +56,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+        about: resolve(__dirname, "about/index.html"),
+        aboutLegacy: resolve(__dirname, "about.html"),
         solutions: resolve(__dirname, "solutions/index.html"),
         solutionsLegacy: resolve(__dirname, "solutions.html"),
         techAakriti: resolve(__dirname, "tech-aakriti/index.html"),
