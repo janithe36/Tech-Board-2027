@@ -92,3 +92,4 @@ The authoritative intra-college championship rulebook is available directly in [
 ## © License & Copyright
 © 2027 **AIT Technical Board**, Army Institute of Technology, Pune. All rights reserved.  
 Developed by Jani with ❤️
+
