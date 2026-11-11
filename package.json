@@ -2,7 +2,7 @@
   "name": "tech-aakriti-2027",
   "version": "1.0.0",
   "private": true,
-  "description": "TECH AAKRITI 2027 - Army Institute of Technology (AIT), Pune - Where Brilliance Meets Innovation",
+  "description": "AIT Technical Board - Army Institute of Technology (AIT), Pune - Engineering Ideas. Building Tomorrow.",
   "type": "module",
   "scripts": {
     "dev": "vite",

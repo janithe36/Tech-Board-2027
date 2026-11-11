@@ -1,3 +1,4 @@
+import { initFooterAnimations } from "./footerAnimation.js";
 // =============================================================
 // TECH AAKRITI 2027 — CONTACT PAGE LOGIC
 // Minimalist Editorial UI, Dynamic Vertical Directory & Phone Copy Actions
@@ -19,6 +20,7 @@ function init() {
   renderVerticals();
   renderVenueBlock();
   initCopyActions();
+  initFooterAnimations();
 }
 
 if (document.readyState === "loading") {
@@ -357,7 +359,7 @@ function renderMarquee() {
       <span class="marquee-dot">•</span>
       <span>SPONSORSHIP</span>
       <span class="marquee-dot">•</span>
-      <span>TECH AAKRITI 2027</span>
+      <span>AIT TECHNICAL BOARD</span>
       <span class="marquee-dot">•</span>
     </span>
   `;

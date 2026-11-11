@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLUTIONS 2K27 | National Tech Fest | AIT Technical Board</title>
+  <link rel="icon" type="image/png" href="/techaakriti-logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/solutions.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tech-aakriti-2027.vercel.app/solutions" />
+  <meta property="og:title" content="SOLUTIONS 2K27 | AIT Technical Board" />
+  <meta property="og:description" content="Official Portal for SOLUTIONS 2K27 — The Flagship National Inter-College Technical Festival of Army Institute of Technology, Pune. Register on Unstop." />
+  <meta property="og:image" content="https://tech-aakriti-2027.vercel.app/og-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://tech-aakriti-2027.vercel.app/solutions" />
+</head>
+
+<body class="solutions-body">
+  <!-- Preloader Screen -->
+  <div class="preloader" id="preloader" aria-label="Loading SOLUTIONS 2K27">
+    <div class="preloader-content">
+      <div class="spider-loader-container" id="spider-container">
+        <div class="spider-bg"></div>
+        <div class="spider-fill" id="spider-fill"></div>
+      </div>
+      <div class="preloader-text-wrapper">
+        <p class="preloader-subtext">ENTERING SOLUTIONS 2K27...</p>
+        <div class="preloader-counter" id="preloader-counter">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Three.js Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="/" class="nav-logo-link" title="Return to Technical Board Home">
+        <img src="/techaakriti-logo.png" alt="AIT Technical Board" class="site-logo" />
+      </a>
+      <div class="header-sub-badge" style="display: flex; flex-direction: column; margin-left: 0.85rem;">
+        <span style="font-family: 'DM Mono', monospace; font-size: 0.68rem; font-weight: 700; color: var(--color-red); letter-spacing: 0.12em;">SOLUTIONS 2K27</span>
+        <span style="font-family: 'DM Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.5);">AIT TECHNICAL BOARD</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hamburger / Toggle Button -->
+  <button class="menu" id="menu-btn" type="button" aria-label="Toggle navigation menu">
+    <div class="hamburger-icon" id="hamburger-icon">
+      <span class="ham-line line-top"></span>
+      <span class="ham-line line-mid"></span>
+      <span class="ham-line line-bot"></span>
+    </div>
+  </button>
+
+  <!-- Fullscreen Interactive Menu -->
+  <nav class="fullscreen-menu" id="fullscreen-menu" aria-hidden="true">
+    <div class="menu-bg"></div>
+    <div class="menu-container">
+      <div class="menu-items-list">
+        <a class="menu-item" href="/" data-target="home">
+          <span class="item-index">01</span>
+          <span class="item-label">Home</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item" href="/#about-section" data-target="about">
+          <span class="item-index">02</span>
+          <span class="item-label">About Us</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item menu-highlight active" href="/solutions" data-target="solutions">
+          <span class="item-index">03</span>
+          <span class="item-label">SOLUTIONS 2K27</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item" href="/tech-aakriti" data-target="tech-aakriti">
+          <span class="item-index">04</span>
+          <span class="item-label">Tech Aakriti</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item" href="/team" data-target="team">
+          <span class="item-index">05</span>
+          <span class="item-label">Team</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item" href="/sponsors" data-target="sponsors">
+          <span class="item-index">06</span>
+          <span class="item-label">Sponsors</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item" href="/contact" data-target="contact">
+          <span class="item-index">07</span>
+          <span class="item-label">Contact</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item" href="/guidelines" data-target="guidelines">
+          <span class="item-index">08</span>
+          <span class="item-label">Guidelines</span>
+          <span class="item-divider"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Solutions Wrapper -->
+  <main class="solutions-page-wrapper">
+    <!-- Hero Section -->
+    <section class="solutions-hero">
+      <div class="solutions-meta-badge">
+        <span class="meta-dot"></span>
+        <span>NATIONAL INTER-COLLEGE TECH FEST • AIT TECHNICAL BOARD</span>
+      </div>
+      <h1 class="solutions-hero-title">
+        SOLUTIONS <span class="text-accent">2K27</span>
+      </h1>
+      <p class="solutions-hero-subtitle">
+        ARMY INSTITUTE OF TECHNOLOGY, PUNE • MARCH 2027
+      </p>
+      <p class="solutions-hero-desc">
+        The flagship national-level technical festival of Army Institute of Technology, Pune. Bringing together elite engineering talent from colleges across India for competitive programming, AI/ML hackathons, robotics, hardware innovation, and startup strategy on Unstop.
+      </p>
+      <div class="solutions-hero-ctas">
+        <a href="#events-section" class="cta-btn-primary">
+          <span>EXPLORE COMPETITIONS</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 10l5 5 5-5"/></svg>
+        </a>
+        <a href="https://unstop.com/college-fests/solutions-2k27-army-institute-of-technology-pune-542997?lb=WSgfyqIG&utm_medium=Share&utm_source=WhatsApp" target="_blank" rel="noopener noreferrer" class="cta-btn-unstop">
+          <span>REGISTER ON UNSTOP</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+
+      <!-- Quick Highlights -->
+      <div class="solutions-stats-strip">
+        <div class="stat-box">
+          <span class="stat-val">10+</span>
+          <span class="stat-lbl">National Competitions</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">PAN-INDIA</span>
+          <span class="stat-lbl">College Participation</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">UNSTOP</span>
+          <span class="stat-lbl">Official Portal</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">HYBRID</span>
+          <span class="stat-lbl">Online Prelims + On-Campus Finale</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About SOLUTIONS Section -->
+    <section class="solutions-about-section" id="about-solutions">
+      <div class="section-head-wrap">
+        <span class="sec-index">01 // THE FESTIVAL</span>
+        <h2 class="sec-title">ABOUT SOLUTIONS 2K27</h2>
+      </div>
+
+      <div class="about-card-banner">
+        <div class="about-text-content">
+          <p>
+            Organized annually by the <strong>AIT Technical Board</strong>, SOLUTIONS stands as one of western India's most respected inter-college technical festivals. The festival provides a national platform for aspiring engineers, researchers, and innovators to push algorithmic boundaries, solve industry-grade hardware challenges, and pitch high-impact ventures.
+          </p>
+          <p>
+            With participants travelling from premier technical institutes nationwide, SOLUTIONS 2K27 blends fierce technical competition with peer mentorship, technical workshops, and direct recognition from corporate tech leaders.
+          </p>
+          <ul class="about-highlights-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Fair, transparent, proctored evaluation hosted on Unstop</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Industry-standard problem statements across AI, Cloud, Embedded Systems &amp; CAD</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Official certificates and national recognition from Army Institute of Technology, Pune</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-unstop-callout">
+          <div class="unstop-logo-badge">
+            UNSTOP <span>PORTAL</span>
+          </div>
+          <p>
+            All registrations, team formations, round submissions, and certificates for SOLUTIONS 2K27 are managed through our official Unstop festival hub.
+          </p>
+          <a href="https://unstop.com/college-fests/solutions-2k27-army-institute-of-technology-pune-542997?lb=WSgfyqIG&utm_medium=Share&utm_source=WhatsApp" target="_blank" rel="noopener noreferrer" class="cta-btn-unstop" style="width: 100%; justify-content: center;">
+            <span>VISIT UNSTOP HUB</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Directory Section -->
+    <section class="solutions-events-section" id="events-section">
+      <div class="section-head-wrap">
+        <span class="sec-index">02 // COMPETITIONS</span>
+        <h2 class="sec-title">EVENT DIRECTORY</h2>
+      </div>
+
+      <!-- Filter and Search Bar -->
+      <div class="events-control-bar">
+        <div class="category-filter-chips" id="categories-filter-bar">
+          <!-- Populated dynamically via solutions.js -->
+        </div>
+
+        <div class="events-search-wrapper">
+          <input type="text" id="events-search-input" class="events-search-input" placeholder="Search event, topic, category..." autocomplete="off" />
+          <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+      </div>
+
+      <!-- Events Grid Container -->
+      <div class="events-cards-grid" id="events-grid-container">
+        <!-- Injected dynamically via solutions.js -->
+      </div>
+    </section>
+
+    <!-- Registration Guide Section -->
+    <section class="solutions-reg-section" id="registration-section">
+      <div class="section-head-wrap">
+        <span class="sec-index">03 // REGISTRATION PROCESS</span>
+        <h2 class="sec-title">HOW TO PARTICIPATE</h2>
+      </div>
+
+      <div class="reg-steps-grid">
+        <div class="reg-step-card">
+          <div class="step-num">01</div>
+          <h3 class="step-heading">CHOOSE YOUR COMPETITION</h3>
+          <p class="step-desc">
+            Explore the events directory above. Review problem domains, eligible team sizes, and format rounds.
+          </p>
+        </div>
+
+        <div class="reg-step-card">
+          <div class="step-num">02</div>
+          <h3 class="step-heading">REGISTER ON UNSTOP</h3>
+          <p class="step-desc">
+            Click "Register" on the event card or open the festival portal to submit participant details and form inter-college teams.
+          </p>
+        </div>
+
+        <div class="reg-step-card">
+          <div class="step-num">03</div>
+          <h3 class="step-heading">PREPARE &amp; COMPETE</h3>
+          <p class="step-desc">
+            Track submission deadlines, participate in online rounds, and qualify for the grand on-campus finale at AIT Pune.
+          </p>
+        </div>
+      </div>
+
+      <div class="reg-final-cta-banner">
+        <h3 class="reg-banner-title">READY TO <span>PROVE YOUR METTLE?</span></h3>
+        <p class="reg-banner-desc">
+          Join thousands of engineering students competing for top honors. Registrations are live on Unstop.
+        </p>
+        <a href="https://unstop.com/college-fests/solutions-2k27-army-institute-of-technology-pune-542997?lb=WSgfyqIG&utm_medium=Share&utm_source=WhatsApp" target="_blank" rel="noopener noreferrer" class="cta-btn-primary" style="padding: 1.1rem 2.8rem; font-size: 1.25rem;">
+          <span>GO TO SOLUTIONS 2K27 UNSTOP PORTAL</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Festival Guidelines Section -->
+    <section class="solutions-guidelines-section" id="guidelines-section">
+      <div class="section-head-wrap">
+        <span class="sec-index">04 // REGULATIONS</span>
+        <h2 class="sec-title">FESTIVAL GUIDELINES</h2>
+      </div>
+
+      
+      <div class="solutions-rollout-banner" style="background: linear-gradient(135deg, rgba(217, 20, 36, 0.12) 0%, rgba(14, 14, 20, 0.95) 100%); border: 1px solid rgba(217, 20, 36, 0.35); border-radius: 8px; padding: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 2rem; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);">
+        <span style="display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.15em; color: #d91424; text-transform: uppercase; margin-bottom: 0.65rem;">OFFICIAL ROLLOUT ANNOUNCEMENT</span>
+        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 900; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; margin-bottom: 0.8rem; line-height: 1.1;">
+          Curious about the guidelines? Be patient we'll soon roll them out.
+        </h3>
+        <p style="font-size: 0.95rem; line-height: 1.65; color: rgba(255, 255, 255, 0.75); max-width: 820px; margin: 0 0 1.5rem;">
+          Official competition rulebooks, challenge problem statements, and evaluation criteria for <strong>SOLUTIONS 2K27</strong> will be released soon on the official Unstop festival portal. Stay tuned!
+        </p>
+        <a href="https://unstop.com/college-fests/solutions-2k27-army-institute-of-technology-pune-542997?lb=WSgfyqIG&utm_medium=Share&utm_source=WhatsApp" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #d91424; color: #ffffff; padding: 0.75rem 1.4rem; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 800; text-transform: uppercase; text-decoration: none; box-shadow: 0 6px 20px rgba(217, 20, 36, 0.4);">
+          <span>CHECK UNSTOP UPDATES</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+
+      <div class="guidelines-grid">
+        <div class="guide-box">
+          <h3 class="guide-box-title">
+            <span class="dot">■</span> ELIGIBILITY &amp; TEAMS
+          </h3>
+          <p>
+            SOLUTIONS 2K27 is open to bona fide undergraduate and postgraduate students from any recognized university or engineering institution. Inter-college teams are permitted for team events. Valid student college identity cards are mandatory.
+          </p>
+        </div>
+
+        <div class="guide-box">
+          <h3 class="guide-box-title">
+            <span class="dot">■</span> ACADEMIC INTEGRITY
+          </h3>
+          <p>
+            Zero tolerance for plagiarism, code unauthorized AI generation in unpermitted rounds, or foul play. Submissions are subjected to automated algorithmic similarity checkers. Infractions lead to immediate disqualification.
+          </p>
+        </div>
+
+        <div class="guide-box">
+          <h3 class="guide-box-title">
+            <span class="dot">■</span> QUERIES &amp; HELPLINE
+          </h3>
+          <p>
+            For any queries regarding registration, accommodation, or problem statements, contact the AIT Technical Board student coordinators or post in the official Unstop discussion forum for rapid resolution.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Event Detail Modal Backdrop -->
+  <div class="event-modal-backdrop" id="event-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="event-modal-dialog">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close details">&times;</button>
+      <div id="modal-dynamic-content">
+        <!-- Injected dynamically on click -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Unified Site Footer (Matching Home Page) -->
+  <!-- SECTION: INNOV8 FOOTER -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <!-- Outer Card with the footermask.svg shape -->
+      <div class="footer-card" id="footer-card">
+        <!-- Background SVG with custom crown tab shape and ambient streamlines -->
+        <svg class="footer-card-shape" viewBox="0 0 1688 896" fill="none" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="footer-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#141419" />
+              <stop offset="100%" stop-color="#08080a" />
+            </linearGradient>
+            <linearGradient id="footer-border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(217, 20, 36, 0.45)" />
+              <stop offset="50%" stop-color="rgba(255, 255, 255, 0.18)" />
+              <stop offset="100%" stop-color="rgba(217, 20, 36, 0.35)" />
+            </linearGradient>
+            <clipPath id="footer-card-clip" clipPathUnits="objectBoundingBox">
+              <path
+                d="M 0 0.0714 C 0 0.0513 0.0083 0.0357 0.019 0.0357 H 0.2607 C 0.2844 0.0357 0.3051 0.0246 0.3199 0.0089 C 0.3318 0.0022 0.3466 0 0.3643 0 H 0.6357 C 0.6534 0 0.6682 0.0022 0.6801 0.0089 C 0.6949 0.0246 0.7156 0.0357 0.7393 0.0357 H 0.9810 C 0.9917 0.0357 1 0.0513 1 0.0714 V 0.9286 C 1 0.9487 0.9917 0.9643 0.9810 0.9643 H 0.7393 C 0.7156 0.9643 0.6949 0.9754 0.6801 0.9911 C 0.6682 0.9978 0.6534 1 0.6357 1 H 0.3643 C 0.3466 1 0.3318 0.9978 0.3199 0.9911 C 0.3051 0.9754 0.2844 0.9643 0.2607 0.9643 H 0.019 C 0.0083 0.9643 0 0.9487 0 0.9286 Z" />
+            </clipPath>
+          </defs>
+          <path
+            d="M0 50C0 32 14 18 32 18H440C480 18 515 10 540 4C560 1 585 0 615 0H1073C1103 0 1128 1 1148 4C1173 10 1208 18 1248 18H1656C1674 18 1688 32 1688 50V856C1688 878 1672 896 1650 896H38C16 896 0 878 0 856Z"
+            fill="url(#footer-card-grad)" stroke="url(#footer-border-grad)" stroke-width="2" />
+          <!-- Ambient Topography Streamlines inside Footer -->
+          <path d="M50 180 C400 100 800 280 1638 160" stroke="rgba(217, 20, 36, 0.22)" stroke-width="1.5"
+            stroke-dasharray="6 6" />
+          <path d="M50 360 C350 220 900 450 1638 300" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5" />
+          <path d="M50 540 C500 380 1100 620 1638 460" stroke="rgba(217, 20, 36, 0.18)" stroke-width="1.8" />
+          <path d="M50 700 C450 600 950 780 1638 640" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1.5"
+            stroke-dasharray="4 4" />
+        </svg>
+
+        <!-- In-Footer Top Crown Notch Innov8 Logo -->
+        <div class="footer-notch-logo-container" id="footer-notch-logo-container">
+          <a href="/" class="footer-notch-logo-link" id="footer-notch-logo-link" title="Return to Home">
+            <img src="/techaakriti-logo.png" alt="AIT Technical Board" class="footer-notch-logo" />
+          </a>
+        </div>
+
+        <!-- Top/Center Tagline (WHERE BRILLIANCE / MEETS INNOVATION with block reveal) -->
+        <div class="footer-tagline-container" id="footer-tagline-container">
+          <h2 class="footer-tagline">
+            <div class="footer-block-reveal">
+              <span class="footer-tagline-line" id="footer-tagline-line1">WHERE BRILLIANCE</span>
+              <div class="footer-reveal-strip" id="footer-strip-1"></div>
+            </div>
+            <div class="footer-block-reveal">
+              <span class="footer-tagline-line text-crimson" id="footer-tagline-line2">MEETS INNOVATION</span>
+              <div class="footer-reveal-strip" id="footer-strip-2"></div>
+            </div>
+          </h2>
+        </div>
+
+        <!-- Left Navigation Column: PAGES -->
+        <div class="footer-nav-col col-pages">
+          <span class="footer-col-label">PAGES</span>
+          <nav class="footer-links-list">
+            <a href="/" class="footer-link-pill" data-text="HOME">
+              <span class="footer-link-wrap" data-text="HOME">HOME</span>
+            </a>
+            <a href="/solutions" class="footer-link-pill" data-text="SOLUTIONS">
+              <span class="footer-link-wrap" data-text="SOLUTIONS">SOLUTIONS</span>
+            </a>
+            <a href="/tech-aakriti" class="footer-link-pill" data-text="TECH AAKRITI">
+              <span class="footer-link-wrap" data-text="TECH AAKRITI">TECH AAKRITI</span>
+            </a>
+            <a href="/team" class="footer-link-pill" data-text="TEAM">
+              <span class="footer-link-wrap" data-text="TEAM">TEAM</span>
+            </a>
+            <a href="/sponsors" class="footer-link-pill" data-text="SPONSORS">
+              <span class="footer-link-wrap" data-text="SPONSORS">SPONSORS</span>
+            </a>
+            <a href="/contact" class="footer-link-pill" data-text="CONTACT">
+              <span class="footer-link-wrap" data-text="CONTACT">CONTACT</span>
+            </a>
+            <a href="/guidelines" class="footer-link-pill" data-text="GUIDELINES">
+              <span class="footer-link-wrap" data-text="GUIDELINES">GUIDELINES</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Right Navigation Column: FOLLOW ON -->
+        <div class="footer-nav-col col-socials">
+          <span class="footer-col-label">FOLLOW ON</span>
+          <nav class="footer-links-list">
+            <a href="https://www.youtube.com/@aitpune2505" target="_blank" rel="noopener noreferrer" class="footer-link-pill" data-text="YOUTUBE">
+              <span class="footer-link-wrap" data-text="YOUTUBE">YOUTUBE</span>
+            </a>
+            <a href="https://www.instagram.com/aittechnicalboard/" target="_blank" rel="noopener noreferrer" class="footer-link-pill"
+              data-text="INSTAGRAM">
+              <span class="footer-link-wrap" data-text="INSTAGRAM">INSTAGRAM</span>
+            </a>
+            <a href="https://www.linkedin.com/company/ait-technical-board" target="_blank" rel="noopener noreferrer" class="footer-link-pill"
+              data-text="LINKEDIN">
+              <span class="footer-link-wrap" data-text="LINKEDIN">LINKEDIN</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Center Cyborg Visual (footer.png) -->
+        <div class="footer-character-wrapper" id="footer-character-wrapper">
+          <img src="/footer.png" alt="AIT Technical Board" class="footer-character-img" loading="lazy" decoding="async" />
+        </div>
+
+        <!-- Bottom Venue CTA Button -->
+        <div class="footer-venue-cta-container">
+          <a href="https://maps.google.com/?q=Army+Institute+of+Technology+Pune" target="_blank" rel="noopener noreferrer" class="footer-venue-btn">
+            <span>VENUE</span>
+            <svg class="footer-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">© AIT TECHNICAL BOARD. ARMY INSTITUTE OF TECHNOLOGY, PUNE. ALL RIGHTS RESERVED.</p>
+        <p class="footer-copyright footer-credits">
+          <a href="https://www.instagram.com/jani_the0036/" target="_blank" rel="noopener noreferrer" class="footer-dev-link">DEVELOPED BY JANI WITH ❤️</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/solutions.js"></script>
+</body>
+
+</html>

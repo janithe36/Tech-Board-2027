@@ -1,3 +1,4 @@
+import { initFooterAnimations } from "./footerAnimation.js";
 // =============================================================
 // TECH AAKRITI 2027 — SPONSORS PAGE LOGIC
 // Minimalist Editorial Grid: Logos + Names Only, Full WeAreCasey Menu, GSAP Entrance
@@ -17,6 +18,7 @@ function init() {
   initFullscreenMenu();
   renderMarquee();
   renderSponsorsGrid();
+  initFooterAnimations();
 }
 
 if (document.readyState === "loading") {

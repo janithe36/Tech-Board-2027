@@ -12,7 +12,15 @@ export default defineConfig({
           const query = search ? `?${search}` : "";
 
           // Redirect *.html to clean URLs
-          const cleanRoutes = ["events", "team", "sponsors", "guidelines", "contact"];
+          const cleanRoutes = [
+            "solutions",
+            "tech-aakriti",
+            "events",
+            "team",
+            "sponsors",
+            "guidelines",
+            "contact",
+          ];
           for (const route of cleanRoutes) {
             if (pathname === `/${route}.html`) {
               res.writeHead(301, { Location: `/${route}${query}` });
@@ -47,6 +55,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+        solutions: resolve(__dirname, "solutions/index.html"),
+        solutionsLegacy: resolve(__dirname, "solutions.html"),
+        techAakriti: resolve(__dirname, "tech-aakriti/index.html"),
+        techAakritiLegacy: resolve(__dirname, "tech-aakriti.html"),
         events: resolve(__dirname, "events/index.html"),
         eventsLegacy: resolve(__dirname, "events.html"),
         team: resolve(__dirname, "team/index.html"),

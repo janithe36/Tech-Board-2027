@@ -1062,7 +1062,7 @@ function openModalWithCircleMorph(event, originPoint) {
     <div class="modal-cta-row modal-anim-item">
       <div class="modal-reg-status">
         <span class="reg-live-dot"></span>
-        <span>REGISTRATIONS ACTIVE • TECH AAKRITI 2027</span>
+        <span>REGISTRATIONS ACTIVE • SOLUTIONS 2K27</span>
       </div>
       <a href="${regUrl}" target="_blank" rel="noopener noreferrer" class="modal-register-btn" id="event-action-register-btn">
         <span>REGISTER NOW</span>

@@ -1,3 +1,4 @@
+import { initFooterAnimations } from "./footerAnimation.js";
 // =============================================================
 // TECH AAKRITI 2027 — TEAM PAGE LOGIC
 // Minimalist Editorial UI, Dynamic Department Filtering & GSAP Entrance
@@ -19,6 +20,7 @@ function init() {
   renderSecretaries();
   renderFilterTabs();
   renderCoreTeam("all");
+  initFooterAnimations();
 }
 
 if (document.readyState === "loading") {

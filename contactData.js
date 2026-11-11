@@ -1,5 +1,5 @@
 // =============================================================
-// TECH AAKRITI 2027 — CONTACT DATA
+// AIT TECHNICAL BOARD — CONTACT DATA
 // 5 Operational Verticals & Heads
 // =============================================================
 
