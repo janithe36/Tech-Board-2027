@@ -1,5 +1,5 @@
 {
-  "name": "tech-aakriti-2027",
+  "name": "tech-board-2027",
   "version": "1.0.0",
   "private": true,
   "description": "AIT Technical Board - Army Institute of Technology (AIT), Pune - Engineering Ideas. Building Tomorrow.",
@@ -9,8 +9,14 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ait-pune",
+    "technical-board",
+    "solutions-2k27",
+    "tech-aakriti",
+    "engineering"
+  ],
+  "author": "AIT Technical Board",
   "license": "ISC",
   "dependencies": {
     "gsap": "^3.15.0",
