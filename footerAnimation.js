@@ -81,5 +81,66 @@ export function initFooterAnimations() {
       0.66
     );
   }
-}
 
+  // 5. Letter-by-letter hover animation for all footer links
+  const footerLinks = document.querySelectorAll(".footer-link-pill");
+  footerLinks.forEach((link) => {
+    const wrap = link.querySelector(".footer-link-wrap");
+    const rawText = (link.getAttribute("data-text") || (wrap ? wrap.textContent : "")).trim().toUpperCase();
+
+    if (wrap && !wrap.querySelector(".footer-char-box")) {
+      wrap.innerHTML = rawText
+        .split("")
+        .map(
+          (char) => `
+          <span class="footer-char-box">
+            <span class="footer-char footer-char-main">${char === " " ? "&nbsp;" : char}</span>
+            <span class="footer-char footer-char-clone">${char === " " ? "&nbsp;" : char}</span>
+          </span>
+        `
+        )
+        .join("");
+
+      const charMains = wrap.querySelectorAll(".footer-char-main");
+      const charClones = wrap.querySelectorAll(".footer-char-clone");
+
+      link.addEventListener("mouseenter", () => {
+        gsap.killTweensOf(charMains);
+        gsap.killTweensOf(charClones);
+
+        gsap.to(charMains, {
+          yPercent: -100,
+          duration: 0.35,
+          stagger: 0.02,
+          ease: "power2.out",
+        });
+
+        gsap.to(charClones, {
+          yPercent: -100,
+          duration: 0.35,
+          stagger: 0.02,
+          ease: "power2.out",
+        });
+      });
+
+      link.addEventListener("mouseleave", () => {
+        gsap.killTweensOf(charMains);
+        gsap.killTweensOf(charClones);
+
+        gsap.to(charMains, {
+          yPercent: 0,
+          duration: 0.3,
+          stagger: 0.016,
+          ease: "power2.out",
+        });
+
+        gsap.to(charClones, {
+          yPercent: 0,
+          duration: 0.3,
+          stagger: 0.016,
+          ease: "power2.out",
+        });
+      });
+    }
+  });
+}

@@ -573,21 +573,46 @@
 
   <!-- SECTION: INNOV8 FOOTER -->
   <footer class="site-footer" id="site-footer">
-    <div class="footer-outer-shell">
-      <div class="footer-main-panel">
-        <canvas class="footer-bg-canvas" id="footer-bg-canvas"></canvas>
+      <div class="footer-container">
+        <!-- Outer Card with the footermask.svg shape -->
+        <div class="footer-card" id="footer-card">
+          <!-- Background SVG with custom crown tab shape and ambient streamlines -->
+          <svg class="footer-card-shape" viewBox="0 0 1688 896" fill="none" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="footer-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#141419" />
+                <stop offset="100%" stop-color="#08080a" />
+              </linearGradient>
+              <linearGradient id="footer-border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="rgba(217, 20, 36, 0.45)" />
+                <stop offset="50%" stop-color="rgba(255, 255, 255, 0.18)" />
+                <stop offset="100%" stop-color="rgba(217, 20, 36, 0.35)" />
+              </linearGradient>
+              <clipPath id="footer-card-clip" clipPathUnits="objectBoundingBox">
+                <path
+                  d="M 0 0.0714 C 0 0.0513 0.0083 0.0357 0.019 0.0357 H 0.2607 C 0.2844 0.0357 0.3051 0.0246 0.3199 0.0089 C 0.3318 0.0022 0.3466 0 0.3643 0 H 0.6357 C 0.6534 0 0.6682 0.0022 0.6801 0.0089 C 0.6949 0.0246 0.7156 0.0357 0.7393 0.0357 H 0.9810 C 0.9917 0.0357 1 0.0513 1 0.0714 V 0.9286 C 1 0.9487 0.9917 0.9643 0.9810 0.9643 H 0.7393 C 0.7156 0.9643 0.6949 0.9754 0.6801 0.9911 C 0.6682 0.9978 0.6534 1 0.6357 1 H 0.3643 C 0.3466 1 0.3318 0.9978 0.3199 0.9911 C 0.3051 0.9754 0.2844 0.9643 0.2607 0.9643 H 0.019 C 0.0083 0.9643 0 0.9487 0 0.9286 Z" />
+              </clipPath>
+            </defs>
+            <path
+              d="M0 50C0 32 14 18 32 18H440C480 18 515 10 540 4C560 1 585 0 615 0H1073C1103 0 1128 1 1148 4C1173 10 1208 18 1248 18H1656C1674 18 1688 32 1688 50V856C1688 878 1672 896 1650 896H38C16 896 0 878 0 856Z"
+              fill="url(#footer-card-grad)" stroke="url(#footer-border-grad)" stroke-width="2" />
+            <!-- Ambient Topography Streamlines inside Footer -->
+            <path d="M50 180 C400 100 800 280 1638 160" stroke="rgba(217, 20, 36, 0.22)" stroke-width="1.5"
+              stroke-dasharray="6 6" />
+            <path d="M50 360 C350 220 900 450 1638 300" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5" />
+            <path d="M50 540 C500 380 1100 620 1638 460" stroke="rgba(217, 20, 36, 0.18)" stroke-width="1.8" />
+            <path d="M50 700 C450 600 950 780 1638 640" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1.5"
+              stroke-dasharray="4 4" />
+          </svg>
 
-        <div class="footer-top-accent-line">
-          <div class="footer-center-triangle-notch"></div>
-        </div>
-
-        <div class="footer-grid-container">
+          <!-- In-Footer Top Crown Notch Innov8 Logo -->
           <div class="footer-notch-logo-container" id="footer-notch-logo-container">
             <a href="/" class="footer-notch-logo-link" id="footer-notch-logo-link">
               <img src="/techboard-logo.png" alt="AIT Technical Board Logo" class="footer-notch-logo" />
             </a>
           </div>
 
+          <!-- Top/Center Tagline (WHERE BRILLIANCE / MEETS INNOVATION with block reveal) -->
           <div class="footer-tagline-container" id="footer-tagline-container">
             <h2 class="footer-tagline">
               <div class="footer-block-reveal">
@@ -607,9 +632,6 @@
             <nav class="footer-links-list">
               <a href="/" class="footer-link-pill" data-text="HOME">
                 <span class="footer-link-wrap" data-text="HOME">HOME</span>
-              </a>
-              <a href="/about" class="footer-link-pill active" data-text="ABOUT">
-                <span class="footer-link-wrap" data-text="ABOUT">ABOUT</span>
               </a>
               <a href="/solutions" class="footer-link-pill" data-text="SOLUTIONS">
                 <span class="footer-link-wrap" data-text="SOLUTIONS">SOLUTIONS</span>
@@ -656,7 +678,7 @@
 
           <!-- Center Cyborg Visual (footer.png) -->
           <div class="footer-character-wrapper" id="footer-character-wrapper">
-            <img src="/footer.png" alt="AIT Technical Board" class="footer-character-img" loading="lazy" decoding="async" />
+            <img src="/footer.png" alt="AIT Technical Board Cyborg Character" class="footer-character-img" loading="lazy" decoding="async" />
           </div>
 
           <!-- Bottom Venue CTA Button -->
@@ -678,8 +700,7 @@
           </p>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
   <script type="module" src="/about.js"></script>
 </body>

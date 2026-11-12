@@ -1,3 +1,4 @@
+import { initFooterAnimations } from "./footerAnimation.js";
 import "./cursor.js";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -565,6 +566,7 @@ function initEventsPage() {
   renderEvents();
   setupFilterControls();
   setupModal();
+  try { initFooterAnimations(); } catch (err) { console.warn("Footer animation err:", err); }
 
   try {
     animatePageEntrance();
