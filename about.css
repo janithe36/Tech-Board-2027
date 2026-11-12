@@ -322,3 +322,402 @@
   gap: 1.25rem;
   flex-wrap: wrap;
 }
+
+/* Vision & Mission Cards */
+.about-vision-mission-section {
+  margin-bottom: 5rem;
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 860px) {
+  .vm-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vm-card {
+  background: linear-gradient(145deg, rgba(22, 18, 24, 0.75) 0%, rgba(10, 10, 14, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: clamp(2rem, 3vw, 2.75rem);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.vm-card:hover {
+  border-color: rgba(217, 20, 36, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(217, 20, 36, 0.12);
+}
+
+.vm-card.vision-card {
+  border-left: 3px solid #d91424;
+}
+
+.vm-card.mission-card {
+  border-left: 3px solid #3b82f6;
+}
+
+.vm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.vm-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.vm-dot.red {
+  background: #d91424;
+  box-shadow: 0 0 10px rgba(217, 20, 36, 0.9);
+}
+
+.vm-dot.blue {
+  background: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.9);
+}
+
+.vm-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.vm-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.84);
+  font-style: italic;
+  margin: 0 0 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.vm-source {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Verified Stats Strip */
+.about-stats-section {
+  margin-bottom: 5rem;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 960px) {
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  background: rgba(18, 18, 24, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(217, 20, 36, 0.35);
+  background: rgba(217, 20, 36, 0.03);
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card:first-child .stat-number {
+  color: #d91424;
+}
+
+.stat-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.stat-detail {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.45;
+}
+
+/* 5 Annual Initiatives Section */
+.about-initiatives-section {
+  margin-bottom: 5rem;
+}
+
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .initiatives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .initiatives-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.initiative-item {
+  background: rgba(18, 18, 24, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.initiative-item:hover {
+  border-color: rgba(217, 20, 36, 0.4);
+  transform: translateY(-4px);
+  background: rgba(217, 20, 36, 0.02);
+}
+
+.init-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.init-type {
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.init-type.inter {
+  background: rgba(217, 20, 36, 0.15);
+  color: #ff3344;
+  border: 1px solid rgba(217, 20, 36, 0.35);
+}
+
+.init-type.intra {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.init-count {
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.init-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+.init-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.init-meta {
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Faculty & Student Governance Section */
+.about-governance-section {
+  margin-bottom: 5rem;
+}
+
+.governance-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .governance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gov-card {
+  background: rgba(18, 18, 24, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.gov-card-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gov-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gov-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.gov-name-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.gov-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.gov-dept {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.gov-role-tag {
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #d91424;
+  background: rgba(217, 20, 36, 0.1);
+  border: 1px solid rgba(217, 20, 36, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.gov-college-portal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(217, 20, 36, 0.05);
+  border: 1px solid rgba(217, 20, 36, 0.25);
+  border-radius: 0.85rem;
+}
+
+.portal-label {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.portal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #d91424;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(217, 20, 36, 0.5);
+  transition: all 0.2s ease;
+}
+
+.portal-link:hover {
+  color: #ff3344;
+  border-bottom-color: #ff3344;
+}
+
+

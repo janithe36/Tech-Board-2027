@@ -4,30 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | AIT Technical Board | Army Institute of Technology, Pune</title>
+  <title>About AIT Technical Board | Apex Technical Governing Body | AIT Pune</title>
   <link rel="icon" type="image/png" href="/techboard-logo.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="stylesheet" href="/about.css" />
+  <meta name="title" content="About AIT Technical Board | Army Institute of Technology, Pune" />
+  <meta property="og:title" content="About AIT Technical Board | Army Institute of Technology, Pune" />
+  <meta property="og:description"
+    content="Official Vision, Mission, Leadership, and Initiatives of the AIT Technical Board, Army Institute of Technology, Pune. Home of SOLUTIONS 2K27 and Technical Aakriti." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tech-board-2027.vercel.app/about" />
-  <meta property="og:title" content="About Us | AIT Technical Board" />
-  <meta property="og:description" content="Official background, organizational hierarchy, and mandate of the AIT Technical Board, Army Institute of Technology, Pune. Home of SOLUTIONS 2K27 and Tech Aakriti." />
   <meta property="og:image" content="https://tech-board-2027.vercel.app/og-banner.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Us | AIT Technical Board" />
-  <meta name="twitter:description" content="Official background, organizational hierarchy, and mandate of the AIT Technical Board, Army Institute of Technology, Pune. Home of SOLUTIONS 2K27 and Tech Aakriti." />
+  <meta name="twitter:title" content="About AIT Technical Board | Army Institute of Technology, Pune" />
+  <meta name="twitter:description"
+    content="Official Vision, Mission, Leadership, and Initiatives of the AIT Technical Board, Army Institute of Technology, Pune. Home of SOLUTIONS 2K27 and Technical Aakriti." />
   <meta name="twitter:image" content="https://tech-board-2027.vercel.app/og-banner.png" />
   <link rel="canonical" href="https://tech-board-2027.vercel.app/about" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/about.css" />
 </head>
 
 <body class="about-page-body">
   <!-- Preloader Screen: Spider Fill Animation -->
-  <div class="preloader" id="preloader" aria-label="Loading About Us">
+  <div class="preloader" id="preloader" aria-label="Loading AIT Technical Board">
     <div class="preloader-content">
       <div class="spider-loader-container" id="spider-container">
         <div class="spider-bg"></div>
@@ -40,31 +49,33 @@
     </div>
   </div>
 
-  <!-- Global Ambient Three.js Canvas -->
-  <canvas id="bg-canvas"></canvas>
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
 
-  <!-- Top Navigation Header -->
-  <header class="site-header">
+  <!-- Fixed Navigation Header -->
+  <header class="site-header about-site-header">
     <div class="header-left">
-      <a href="/" class="nav-logo-link" title="Return to Home">
-        <img src="/techboard-logo.png" alt="AIT Technical Board" class="site-logo" />
+      <a href="/" class="header-logo-link" aria-label="AIT Technical Board Home">
+        <img src="/techboard-logo.png" alt="AIT Technical Board Logo" class="brand-logo-img" />
+        <span class="brand-text">TECH BOARD</span>
       </a>
+    </div>
+
+    <div class="header-right">
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="menu-label">MENU</span>
+        <div class="hamburger-icon">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+        </div>
+      </button>
     </div>
   </header>
 
-  <!-- Top-Level Fixed Circular Glass Hamburger / Cross Toggle Button -->
-  <button class="menu" id="menu-btn" type="button" aria-label="Toggle navigation menu">
-    <div class="hamburger-icon" id="hamburger-icon">
-      <span class="ham-line line-top"></span>
-      <span class="ham-line line-mid"></span>
-      <span class="ham-line line-bot"></span>
-    </div>
-  </button>
-
-  <!-- Fullscreen Interactive Menu Overlay -->
-  <nav class="fullscreen-menu" id="fullscreen-menu" aria-hidden="true">
+  <!-- Fullscreen Navigation Menu Overlay -->
+  <nav class="fullscreen-menu" id="fullscreen-menu" aria-label="Main Navigation">
     <div class="menu-bg"></div>
-    <div class="menu-container">
+    <div class="menu-wrapper">
       <div class="menu-items-list">
         <a class="menu-item" href="/" data-target="home">
           <span class="item-index">01</span>
@@ -73,10 +84,10 @@
         </a>
         <a class="menu-item active" href="/about" data-target="about">
           <span class="item-index">02</span>
-          <span class="item-label">About Us</span>
+          <span class="item-label">About</span>
           <span class="item-divider"></span>
         </a>
-        <a class="menu-item menu-highlight" href="/solutions" data-target="solutions">
+        <a class="menu-item" href="/solutions" data-target="solutions">
           <span class="item-index">03</span>
           <span class="item-label">SOLUTIONS 2K27</span>
           <span class="item-divider"></span>
@@ -122,9 +133,269 @@
         AIT TECHNICAL <span class="accent-text">BOARD</span>
       </h1>
       <p class="about-hero-desc">
-        The apex student technical organization of <strong>Army Institute of Technology, Pune</strong>. Spearheading technical learning, competitive engineering, open-source innovation, and cross-departmental collaboration under the motto <em>"Engineering Ideas. Building Tomorrow."</em>
+        The apex student technical organization of <strong>Army Institute of Technology, Pune</strong>. Spearheading technical learning, competitive engineering, research, and cross-departmental collaboration under the motto <em>"Engineering Ideas. Building Tomorrow."</em>
       </p>
     </header>
+
+    <!-- SECTION: OFFICIAL VISION & MISSION (Verbatim from Official Institute Charter) -->
+    <section class="about-vision-mission-section">
+      <div class="vm-grid">
+        <div class="vm-card vision-card">
+          <div class="vm-badge">
+            <span class="vm-dot red"></span>
+            OFFICIAL VISION
+          </div>
+          <h3 class="vm-title">CENTER OF TECHNICAL EXCELLENCE</h3>
+          <blockquote class="vm-text">
+            "To be a recognized center of technical excellence that fosters research, innovation, and leadership by engaging students in nationally competitive platforms, thereby contributing to the advancement of knowledge and technology."
+          </blockquote>
+          <span class="vm-source">— Technical Board Charter, Army Institute of Technology</span>
+        </div>
+
+        <div class="vm-card mission-card">
+          <div class="vm-badge">
+            <span class="vm-dot blue"></span>
+            OFFICIAL MISSION
+          </div>
+          <h3 class="vm-title">CULTIVATING RESEARCH &amp; INNOVATION</h3>
+          <blockquote class="vm-text">
+            "The Technical Board is committed to cultivating innovation, research aptitude, and technical proficiency by organizing events in research paper writing, competitive programming, robotics, and hardware design, while hosting impactful intra- and inter-college technical fests. Through mentorship and collaboration, it empowers students to excel in national hackathons and AI/ML competitions, equipping them with the professional and leadership skills required to contribute effectively to academia, industry, and society."
+          </blockquote>
+          <span class="vm-source">— Technical Board Charter, Army Institute of Technology</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: VERIFIED INSTITUTIONAL SCALE (AY 2025-26 Report) -->
+    <section class="about-stats-section">
+      <div class="about-stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">11,500+</span>
+          <span class="stat-label">National Participants</span>
+          <span class="stat-detail">11,000+ external engineers nationwide in Solutions</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">₹11,00,000/-</span>
+          <span class="stat-label">Institute Allocated Budget</span>
+          <span class="stat-detail">Official institutional funding by AIT Pune</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Annual Flagship Initiatives</span>
+          <span class="stat-detail">Solutions, Tech Aakriti, TechElevate, Aryabhatta &amp; Snaphunt</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">1,740+</span>
+          <span class="stat-label">Campus Engineering Cadre</span>
+          <span class="stat-detail">Across COMP, IT, E&amp;TC, and Mech/ARE branches</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Ecosystem: SOLUTIONS vs TECH AAKRITI -->
+    <section class="about-events-section">
+      <div class="about-section-header">
+        <span class="about-section-tag">FLAGSHIP PLATFORMS</span>
+        <h2 class="about-section-title">OUR TWO DISTINCTIVE TECHNICAL ECOSYSTEMS</h2>
+        <p style="color: rgba(255, 255, 255, 0.7); max-width: 700px; margin: 0.5rem auto 0; font-size: 0.95rem;">
+          The AIT Technical Board governs and orchestrates two major technical festivals, each serving a unique competitive purpose.
+        </p>
+      </div>
+
+      <div class="about-events-grid">
+        <!-- Fest Card 1: SOLUTIONS 2K27 (Major Inter-College) -->
+        <article class="fest-card solutions-card">
+          <div>
+            <span class="fest-badge solutions-badge">MAJOR INTER-COLLEGE FESTIVAL</span>
+            <h3 class="fest-title">SOLUTIONS 2K27</h3>
+            <p class="fest-desc">
+              The flagship national-level technical festival of Army Institute of Technology, Pune. Bringing together leading student engineers, coders, and robot builders from colleges across India for competitive hackathons, robotics challenges, and cash prizes on Unstop.
+            </p>
+            <ul class="fest-features">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>11,500+ Total Participants (11,000+ External Nationwide)</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Official Registrations on Unstop Portal</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>10+ Verified National Competitions &amp; Hackathons</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pan-India College Footfall, Industry Mentors &amp; Cash Prizes</span>
+              </li>
+            </ul>
+          </div>
+          <a href="/solutions" class="fest-btn btn-solutions">
+            <span>EXPLORE SOLUTIONS 2K27</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- Fest Card 2: TECH AAKRITI (Intra-College) -->
+        <article class="fest-card tech-aakriti-card">
+          <div>
+            <span class="fest-badge tech-aakriti-badge">INTRA-COLLEGE CHAMPIONSHIP</span>
+            <h3 class="fest-title">TECH AAKRITI</h3>
+            <p class="fest-desc">
+              AIT's internal battleground where all four engineering departments (COMP, E&amp;TC, IT, Mech/ARE) compete head-to-head across 21 rigorous technical disciplines to crown the overall Technical Champion Branch of Army Institute of Technology.
+            </p>
+            <ul class="fest-features">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>4 Engineering Departments (1,740 Students Represented)</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>350+ Direct Active Participants</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>21 Disciplines (Software, Hardware, Esports)</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Authoritative Embedded Rulebook (.docx) &amp; Departmental Trophy</span>
+              </li>
+            </ul>
+          </div>
+          <a href="/tech-aakriti" class="fest-btn btn-tech-aakriti">
+            <span>EXPLORE TECH AAKRITI</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION: THE 5 OFFICIAL INITIATIVES (AY 2025-26 Report) -->
+    <section class="about-initiatives-section">
+      <div class="about-section-header">
+        <span class="about-section-tag">ANNUAL CALENDAR</span>
+        <h2 class="about-section-title">THE 5 OFFICIAL TECHNICAL INITIATIVES</h2>
+        <p style="color: rgba(255, 255, 255, 0.7); max-width: 720px; margin: 0.5rem auto 0; font-size: 0.95rem;">
+          Conducted by the AIT Technical Board throughout the academic year to foster technical proficiency, research aptitude, and competitive leadership.
+        </p>
+      </div>
+
+      <div class="initiatives-grid">
+        <!-- 1. Solutions -->
+        <article class="initiative-item">
+          <div>
+            <div class="init-badge-row">
+              <span class="init-type inter">INTER-COLLEGE</span>
+              <span class="init-count">11,500+ STUDENTS</span>
+            </div>
+            <h3 class="init-title">SOLUTIONS</h3>
+            <p class="init-desc">
+              National flagship tech fest uniting external engineering students across India for high-stakes coding, robotics, AI, and circuit challenges.
+            </p>
+          </div>
+          <div class="init-meta">
+            <span><strong>Mode:</strong> Hybrid (Online &amp; On-Campus)</span>
+            <span><strong>Faculty IC:</strong> Dr. Ashwini Sapkal &amp; Dr. P. B. Karandikar</span>
+            <span><strong>External Footfall:</strong> 11,000+ Students</span>
+          </div>
+        </article>
+
+        <!-- 2. Technical Aakriti -->
+        <article class="initiative-item">
+          <div>
+            <div class="init-badge-row">
+              <span class="init-type intra">INTRA-COLLEGE</span>
+              <span class="init-count">350+ PARTICIPANTS</span>
+            </div>
+            <h3 class="init-title">TECHNICAL AAKRITI</h3>
+            <p class="init-desc">
+              Premier inter-departmental technical tournament bringing together all 4 engineering branches to compete across 21 rigorous technical disciplines.
+            </p>
+          </div>
+          <div class="init-meta">
+            <span><strong>Mode:</strong> Offline On-Campus Arena</span>
+            <span><strong>Faculty IC:</strong> Dr. R. B. Gurav &amp; Dr. P. B. Karandikar</span>
+            <span><strong>Scope:</strong> COMP, IT, E&amp;TC, Mech/ARE</span>
+          </div>
+        </article>
+
+        <!-- 3. TechElevate -->
+        <article class="initiative-item">
+          <div>
+            <div class="init-badge-row">
+              <span class="init-type intra">INTRA-COLLEGE</span>
+              <span class="init-count">400+ PARTICIPANTS</span>
+            </div>
+            <h3 class="init-title">TECHELEVATE</h3>
+            <p class="init-desc">
+              Innovation hackathon challenging software and hardware creators to engineer disruptive, impactful prototypes for real-world problems.
+            </p>
+          </div>
+          <div class="init-meta">
+            <span><strong>Mode:</strong> Offline (Round 1 &amp; Round 2)</span>
+            <span><strong>Faculty IC:</strong> Dr. Ashwini Sapkal &amp; Dr. R. B. Gurav</span>
+            <span><strong>Focus:</strong> Software &amp; Hardware Disruption</span>
+          </div>
+        </article>
+
+        <!-- 4. Aryabhatta Quiz -->
+        <article class="initiative-item">
+          <div>
+            <div class="init-badge-row">
+              <span class="init-type intra">INTRA-COLLEGE</span>
+              <span class="init-count">180+ PARTICIPANTS</span>
+            </div>
+            <h3 class="init-title">ARYABHATTA QUIZ</h3>
+            <p class="init-desc">
+              Club collaboration competitive mathematics quiz testing problem-solving, logical reasoning, and analytical speed across all academic years.
+            </p>
+          </div>
+          <div class="init-meta">
+            <span><strong>Mode:</strong> Offline Examination Arena</span>
+            <span><strong>Faculty IC:</strong> Dr. Ganesh Mundhe &amp; Prof. P. R. Sonawane</span>
+            <span><strong>Focus:</strong> Mathematical &amp; Logical Prowess</span>
+          </div>
+        </article>
+
+        <!-- 5. Snaphunt -->
+        <article class="initiative-item">
+          <div>
+            <div class="init-badge-row">
+              <span class="init-type intra">INTRA-COLLEGE</span>
+              <span class="init-count">450+ PARTICIPANTS</span>
+            </div>
+            <h3 class="init-title">SNAPHUNT</h3>
+            <p class="init-desc">
+              Riddle-based campus location hunt designed to foster teamwork, critical thinking, campus familiarity, and active collaboration among first-year students.
+            </p>
+          </div>
+          <div class="init-meta">
+            <span><strong>Mode:</strong> Offline Campus Exploration</span>
+            <span><strong>Faculty IC:</strong> Dr. P. B. Karandikar &amp; Prof. P. R. Sonawane</span>
+            <span><strong>Target:</strong> First-Year Orientation &amp; Synergy</span>
+          </div>
+        </article>
+
+        <!-- 6. Summary Card -->
+        <article class="initiative-item" style="background: rgba(217, 20, 36, 0.05); border-color: rgba(217, 20, 36, 0.3);">
+          <div>
+            <div class="init-badge-row">
+              <span class="init-type inter">AY 2025-26</span>
+              <span class="init-count">AIT PUNE</span>
+            </div>
+            <h3 class="init-title">INSTITUTIONAL IMPACT</h3>
+            <p class="init-desc">
+              All 5 annual initiatives are officially funded by Army Institute of Technology, Pune with an allocated budget of ₹11,00,000/- and guided by distinguished faculty mentors.
+            </p>
+          </div>
+          <div class="init-meta">
+            <span><strong>Official Portal:</strong> aitpune.com/TechnicalBoard.aspx</span>
+            <span><strong>Instagram:</strong> @aittechnicalboard</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <!-- Overview & Pillars Section -->
     <section class="about-overview-card">
@@ -155,7 +426,7 @@
           <div class="pillar-icon">🤝</div>
           <h3 class="pillar-title">INTER-BRANCH SYNERGY</h3>
           <p class="pillar-desc">
-            Fostering intense cross-departmental collaboration among Computer, IT, Electronics & Telecommunication, and Mechanical/ARE students.
+            Fostering intense cross-departmental collaboration among Computer, IT, Electronics &amp; Telecommunication, and Mechanical/ARE students.
           </p>
         </div>
 
@@ -169,82 +440,108 @@
       </div>
     </section>
 
-    <!-- Event Ecosystem: SOLUTIONS vs TECH AAKRITI -->
-    <section class="about-events-section">
+    <!-- SECTION: FACULTY & STUDENT GOVERNANCE (Official Institute Data) -->
+    <section class="about-governance-section">
       <div class="about-section-header">
-        <span class="about-section-tag">FLAGSHIP PLATFORMS</span>
-        <h2 class="about-section-title">OUR TWO DISTINCTIVE TECHNICAL ECOSYSTEMS</h2>
-        <p style="color: rgba(255, 255, 255, 0.7); max-width: 700px; margin: 0.5rem auto 0; font-size: 0.95rem;">
-          The AIT Technical Board governs and orchestrates two major technical festivals, each serving a unique competitive purpose.
+        <span class="about-section-tag">ORGANIZATIONAL GOVERNANCE</span>
+        <h2 class="about-section-title">FACULTY &amp; STUDENT LEADERSHIP</h2>
+        <p style="color: rgba(255, 255, 255, 0.7); max-width: 720px; margin: 0.5rem auto 0; font-size: 0.95rem;">
+          Verified administrative leadership governing the AIT Technical Board under the authority of Army Institute of Technology, Pune.
         </p>
       </div>
 
-      <div class="about-events-grid">
-        <!-- Fest Card 1: SOLUTIONS 2K27 (Major Inter-College) -->
-        <article class="fest-card solutions-card">
-          <div>
-            <span class="fest-badge solutions-badge">MAJOR INTER-COLLEGE FESTIVAL</span>
-            <h3 class="fest-title">SOLUTIONS 2K27</h3>
-            <p class="fest-desc">
-              The flagship national-level technical festival of Army Institute of Technology, Pune. Bringing together leading student engineers, coders, and robot builders from colleges across India for competitive hackathons, robotics challenges, and cash prizes on Unstop.
-            </p>
-            <ul class="fest-features">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>National Inter-College Participation</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Official Registrations on Unstop Portal</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>10+ Verified National Competitions</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Industry Sponsorship & Cash Prizes</span>
-              </li>
-            </ul>
-          </div>
-          <a href="/solutions" class="fest-btn btn-solutions">
-            <span>EXPLORE SOLUTIONS 2K27</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
+      <div class="governance-grid">
+        <!-- Faculty In-Charge Card -->
+        <div class="gov-card">
+          <h3 class="gov-card-title">FACULTY IN-CHARGE COMMITTEE</h3>
+          <div class="gov-list">
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Dr. P. B. Karandikar</span>
+                <span class="gov-dept">Electronics &amp; Telecommunication (ETC)</span>
+              </div>
+              <span class="gov-role-tag">STAFF IN-CHARGE (IC)</span>
+            </div>
 
-        <!-- Fest Card 2: TECH AAKRITI (Intra-College) -->
-        <article class="fest-card tech-aakriti-card">
-          <div>
-            <span class="fest-badge tech-aakriti-badge">INTRA-COLLEGE CHAMPIONSHIP</span>
-            <h3 class="fest-title">TECH AAKRITI</h3>
-            <p class="fest-desc">
-              AIT's internal battleground where all four engineering departments (COMP, E&TC, IT, Mech/ARE) compete head-to-head across 21 rigorous technical disciplines to crown the overall Technical Champion Branch of Army Institute of Technology.
-            </p>
-            <ul class="fest-features">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>4 Engineering Departments (1,740 Students)</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>21 Disciplines (Software, Hardware, Esports)</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Departmental Trophy & Normalized Scoring</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Authoritative Embedded Rulebook (.docx)</span>
-              </li>
-            </ul>
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Dr. Ashwini Sapkal</span>
+                <span class="gov-dept">Computer Engineering</span>
+              </div>
+              <span class="gov-role-tag">FACULTY IN-CHARGE</span>
+            </div>
+
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Dr. R. B. Gurav</span>
+                <span class="gov-dept">Information Technology</span>
+              </div>
+              <span class="gov-role-tag">FACULTY IN-CHARGE</span>
+            </div>
+
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Dr. Ganesh Mundhe</span>
+                <span class="gov-dept">Applied Sciences &amp; Engineering</span>
+              </div>
+              <span class="gov-role-tag">FACULTY IN-CHARGE</span>
+            </div>
+
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Prof. P. R. Sonawane</span>
+                <span class="gov-dept">Mechanical Engineering</span>
+              </div>
+              <span class="gov-role-tag">FACULTY IN-CHARGE</span>
+            </div>
           </div>
-          <a href="/tech-aakriti" class="fest-btn btn-tech-aakriti">
-            <span>EXPLORE TECH AAKRITI</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
+        </div>
+
+        <!-- Student Leadership Card -->
+        <div class="gov-card">
+          <h3 class="gov-card-title">STUDENT IN-CHARGE &amp; SECRETARIES</h3>
+          <div class="gov-list">
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Ajay Singh Tomar</span>
+                <span class="gov-dept">Information Technology (IT A)</span>
+              </div>
+              <span class="gov-role-tag">STUDENT IN-CHARGE</span>
+            </div>
+
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Simran</span>
+                <span class="gov-dept">Information Technology (IT B)</span>
+              </div>
+              <span class="gov-role-tag">STUDENT IN-CHARGE</span>
+            </div>
+
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Shashank Tiwari</span>
+                <span class="gov-dept">Past Student Secretary (AY 2025-26)</span>
+              </div>
+              <span class="gov-role-tag" style="color: #3b82f6; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1);">PAST SECRETARY</span>
+            </div>
+
+            <div class="gov-item">
+              <div class="gov-name-wrap">
+                <span class="gov-name">Sneha</span>
+                <span class="gov-dept">Past Student Secretary (AY 2025-26)</span>
+              </div>
+              <span class="gov-role-tag" style="color: #3b82f6; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1);">PAST SECRETARY</span>
+            </div>
+          </div>
+
+          <div class="gov-college-portal-bar">
+            <span class="portal-label">Official College Technical Board Portal:</span>
+            <a href="https://www.aitpune.com/TechnicalBoard.aspx" target="_blank" rel="noopener noreferrer" class="portal-link">
+              <span>aitpune.com/TechnicalBoard.aspx</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -343,6 +640,10 @@
               <a href="https://www.linkedin.com/company/ait-technical-board" target="_blank" rel="noopener noreferrer" class="footer-link-pill"
                 data-text="LINKEDIN">
                 <span class="footer-link-wrap" data-text="LINKEDIN">LINKEDIN</span>
+              </a>
+              <a href="https://www.aitpune.com/TechnicalBoard.aspx" target="_blank" rel="noopener noreferrer" class="footer-link-pill"
+                data-text="AIT PORTAL">
+                <span class="footer-link-wrap" data-text="AIT PORTAL">AIT PORTAL ↗</span>
               </a>
             </nav>
           </div>

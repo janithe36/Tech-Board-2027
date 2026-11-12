@@ -1,7 +1,103 @@
 // =============================================================
 // TECH AAKRITI 2027 — TEAM DATA
-// 3 Fest Leads & 25 Core Committee Heads (28 Total)
+// AIT Technical Board Leadership, Faculty In-Charge & Student Heads
 // =============================================================
+
+export const facultyLeadership = [
+  {
+    id: "faculty-karandikar",
+    name: "Dr. P. B. Karandikar",
+    designation: "Staff In-Charge (IC)",
+    department: "Electronics & Telecommunication (ETC)",
+    role: "Staff In-Charge, AIT Technical Board",
+    badge: "STAFF IN-CHARGE (IC)",
+    tag: "FACULTY LEADERSHIP",
+    image: "/team/jani.png",
+  },
+  {
+    id: "faculty-sapkal",
+    name: "Dr. Ashwini Sapkal",
+    designation: "Faculty In-Charge",
+    department: "Computer Engineering",
+    role: "Faculty In-Charge (Solutions & TechElevate)",
+    badge: "FACULTY IN-CHARGE",
+    tag: "FACULTY LEADERSHIP",
+    image: "/team/jani.png",
+  },
+  {
+    id: "faculty-gurav",
+    name: "Dr. R. B. Gurav",
+    designation: "Faculty In-Charge",
+    department: "Information Technology",
+    role: "Faculty In-Charge (Tech Aakriti & TechElevate)",
+    badge: "FACULTY IN-CHARGE",
+    tag: "FACULTY LEADERSHIP",
+    image: "/team/jani.png",
+  },
+  {
+    id: "faculty-mundhe",
+    name: "Dr. Ganesh Mundhe",
+    designation: "Faculty In-Charge",
+    department: "Applied Sciences & Engineering",
+    role: "Faculty In-Charge (Aryabhatta Quiz)",
+    badge: "FACULTY IN-CHARGE",
+    tag: "FACULTY LEADERSHIP",
+    image: "/team/jani.png",
+  },
+  {
+    id: "faculty-sonawane",
+    name: "Prof. P. R. Sonawane",
+    designation: "Faculty In-Charge",
+    department: "Mechanical Engineering",
+    role: "Faculty In-Charge (Snaphunt & Aryabhatta Quiz)",
+    badge: "FACULTY IN-CHARGE",
+    tag: "FACULTY LEADERSHIP",
+    image: "/team/jani.png",
+  },
+];
+
+export const studentsInCharge = [
+  {
+    id: "student-ajay",
+    name: "Ajay Singh Tomar",
+    role: "Student In-Charge",
+    department: "Information Technology (IT A)",
+    tag: "STUDENT IN-CHARGE",
+    badge: "CURRENT LEADERSHIP",
+    status: "Active",
+    image: "/team/jani.png",
+  },
+  {
+    id: "student-simran",
+    name: "Simran",
+    role: "Student In-Charge",
+    department: "Information Technology (IT B)",
+    tag: "STUDENT IN-CHARGE",
+    badge: "CURRENT LEADERSHIP",
+    status: "Active",
+    image: "/team/jani.png",
+  },
+  {
+    id: "past-shashank",
+    name: "Shashank Tiwari",
+    role: "Student Secretary (AY 2025-26)",
+    department: "Past Student Secretary",
+    tag: "PAST SECRETARY",
+    badge: "AY 2025-26 REPORT",
+    status: "Past Secretary",
+    image: "/team/jani.png",
+  },
+  {
+    id: "past-sneha",
+    name: "Sneha",
+    role: "Student Secretary (AY 2025-26)",
+    department: "Past Student Secretary",
+    tag: "PAST SECRETARY",
+    badge: "AY 2025-26 REPORT",
+    status: "Past Secretary",
+    image: "/team/jani.png",
+  },
+];
 
 export const secretariesData = [
   {

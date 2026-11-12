@@ -3447,3 +3447,68 @@ p {
   color: #d91424 !important;
   text-shadow: 0 0 12px rgba(217, 20, 36, 0.6);
 }
+
+
+/* Annual Initiatives Ribbon */
+.initiatives-ribbon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(14, 14, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.25rem 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 860px) {
+  .initiatives-ribbon {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  .ribbon-divider {
+    display: none;
+  }
+}
+
+.ribbon-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ribbon-tag {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #d91424;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ribbon-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.ribbon-metric {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ribbon-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}

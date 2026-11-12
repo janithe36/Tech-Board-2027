@@ -8,7 +8,7 @@ import "./cursor.js";
 import * as THREE from "three";
 import gsap from "gsap";
 import { vertexShader, bgFragmentShader } from "./shaders.js";
-import { secretariesData, coreTeamData, departmentFilters } from "./teamData.js";
+import { secretariesData, coreTeamData, departmentFilters, facultyLeadership, studentsInCharge } from "./teamData.js";
 
 let bgRenderer, bgScene, bgCamera;
 let currentFilter = "all";
@@ -17,6 +17,8 @@ function init() {
   initBackgroundCanvas();
   initPreloader();
   initFullscreenMenu();
+  renderFacultyLeadership();
+  renderStudentsInCharge();
   renderSecretaries();
   renderFilterTabs();
   renderCoreTeam("all");
@@ -339,6 +341,50 @@ function initFullscreenMenu() {
 }
 
 // =============================================================
+
+// =============================================================
+// 3.5 RENDER FACULTY LEADERSHIP & STUDENTS IN CHARGE
+// =============================================================
+function renderFacultyLeadership() {
+  const container = document.getElementById("faculty-grid");
+  if (!container) return;
+
+  container.innerHTML = facultyLeadership
+    .map(
+      (member) => `
+      <article class="faculty-card" data-id="${member.id}">
+        <div>
+          <span class="faculty-badge">${member.badge}</span>
+          <h3 class="faculty-name">${member.name}</h3>
+          <p class="faculty-dept">${member.department}</p>
+        </div>
+        <p class="faculty-role">${member.role}</p>
+      </article>
+    `
+    )
+    .join("");
+}
+
+function renderStudentsInCharge() {
+  const container = document.getElementById("students-incharge-grid");
+  if (!container) return;
+
+  container.innerHTML = studentsInCharge
+    .map(
+      (student) => `
+      <article class="student-card" data-id="${student.id}">
+        <div>
+          <span class="student-badge ${student.status === "Active" ? "current" : "past"}">${student.tag}</span>
+          <h3 class="student-name">${student.name}</h3>
+          <p class="student-role">${student.role}</p>
+        </div>
+        <p class="student-dept">${student.department}</p>
+      </article>
+    `
+    )
+    .join("");
+}
+
 // 4. RENDER EXECUTIVE SECRETARIES
 // =============================================================
 function renderSecretaries() {
