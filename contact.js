@@ -444,6 +444,10 @@ function renderVenueBlock() {
         <span class="venue-tag">// ${v.title}</span>
         <h3 class="venue-name">${v.name}</h3>
         <p class="venue-address">${v.address}</p>
+        <div class="venue-contacts" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.45rem; font-family: 'DM Mono', monospace; font-size: 0.85rem;">
+          <div><strong style="color: #ffffff;">Institutional:</strong> <a href="mailto:${v.eduEmail || v.email}" style="color: #ea4856; text-decoration: none; margin-left: 0.4rem;">${v.eduEmail || v.email}</a></div>
+          <div><strong style="color: #ffffff;">Secretariat (Gmail):</strong> <a href="mailto:${v.gmail}" style="color: #ea4856; text-decoration: none; margin-left: 0.4rem;">${v.gmail}</a></div>
+        </div>
       </div>
       <div class="venue-right">
         <a href="${v.mapsUrl}" target="_blank" rel="noopener noreferrer" class="venue-action-btn venue-action-btn--primary">
@@ -453,8 +457,15 @@ function renderVenueBlock() {
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         </a>
-        <a href="mailto:${v.email}" class="venue-action-btn venue-action-btn--secondary">
-          <span>EMAIL SUPPORT</span>
+        <a href="mailto:${v.eduEmail || v.email}" class="venue-action-btn venue-action-btn--secondary" title="Email Institutional Secretariat">
+          <span>EMAIL INSTITUTION</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <a href="mailto:${v.gmail}" class="venue-action-btn venue-action-btn--secondary" title="Email Technical Board Gmail">
+          <span>EMAIL GMAIL</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
