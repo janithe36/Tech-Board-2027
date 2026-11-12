@@ -5,8 +5,8 @@
 
 export const contactData = {
   title: "CONTACT DIRECTORY",
-  subtitle: "REACH OUT TO TECH AAKRITI COORDINATION HEADS",
-  marqueeText: "REACH OUT TO US • HARDWARE • SOFTWARE • ESPORTS • PUBLIC RELATIONS • SPONSORSHIP • TECH AAKRITI 2027",
+  subtitle: "REACH OUT TO AIT TECHNICAL BOARD COORDINATION HEADS",
+  marqueeText: "REACH OUT TO US • HARDWARE • SOFTWARE • ESPORTS • PUBLIC RELATIONS • SPONSORSHIP • AIT TECHNICAL BOARD 2027",
   marqueeSpeed: 28,
   verticals: [
     {
@@ -144,7 +144,9 @@ export const contactData = {
     title: "CAMPUS HEADQUARTERS",
     name: "Army Institute of Technology (AIT), Pune",
     address: "Alandi Road, Dighi, Pune, Maharashtra 411015",
-    email: "support@techaakriti.com",
+    email: "aittechnicalboard@gmail.com",
+    portalUrl: "https://www.aitpune.com/TechnicalBoard.aspx",
+    instagramUrl: "https://www.instagram.com/aittechnicalboard",
     mapsUrl: "https://maps.google.com/?q=Army+Institute+of+Technology+Pune",
   },
 };

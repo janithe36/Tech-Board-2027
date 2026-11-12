@@ -604,3 +604,32 @@ body.is-loading {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Sponsor Tier Badge and Label */
+.sponsor-tier-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ea4856;
+  background: rgba(217, 20, 36, 0.12);
+  border: 1px solid rgba(217, 20, 36, 0.28);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.sponsor-tier-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+}

@@ -437,12 +437,12 @@ input[type="submit"],
 }
 
 /* No Results Box */
-.no-results-box.is-active {
-  display: flex !important;
+.no-results-box {
+  display: none;
 }
 
-.no-results-box {
-  display: flex;
+.no-results-box.is-active {
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;

@@ -56,14 +56,14 @@ export const facultyLeadership = [
   },
 ];
 
-export const studentsInCharge = [
+export const currentStudentsInCharge = [
   {
     id: "student-ajay",
     name: "Ajay Singh Tomar",
     role: "Student In-Charge",
     department: "Information Technology (IT A)",
-    tag: "STUDENT IN-CHARGE",
-    badge: "CURRENT LEADERSHIP",
+    tag: "CURRENT STUDENT IN-CHARGE",
+    badge: "ACTIVE OFFICE BEARER",
     status: "Active",
     image: "/team/jani.png",
   },
@@ -72,29 +72,32 @@ export const studentsInCharge = [
     name: "Simran",
     role: "Student In-Charge",
     department: "Information Technology (IT B)",
-    tag: "STUDENT IN-CHARGE",
-    badge: "CURRENT LEADERSHIP",
+    tag: "CURRENT STUDENT IN-CHARGE",
+    badge: "ACTIVE OFFICE BEARER",
     status: "Active",
     image: "/team/jani.png",
   },
+];
+
+export const pastStudentSecretaries = [
   {
     id: "past-shashank",
     name: "Shashank Tiwari",
-    role: "Student Secretary (AY 2025-26)",
-    department: "Past Student Secretary",
-    tag: "PAST SECRETARY",
+    role: "Student Secretary",
+    department: "Tenure: AY 2025-26",
+    tag: "PAST STUDENT SECRETARY",
     badge: "AY 2025-26 REPORT",
-    status: "Past Secretary",
+    status: "Historical",
     image: "/team/jani.png",
   },
   {
     id: "past-sneha",
     name: "Sneha",
-    role: "Student Secretary (AY 2025-26)",
-    department: "Past Student Secretary",
-    tag: "PAST SECRETARY",
+    role: "Student Secretary",
+    department: "Tenure: AY 2025-26",
+    tag: "PAST STUDENT SECRETARY",
     badge: "AY 2025-26 REPORT",
-    status: "Past Secretary",
+    status: "Historical",
     image: "/team/jani.png",
   },
 ];

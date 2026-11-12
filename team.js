@@ -8,7 +8,7 @@ import "./cursor.js";
 import * as THREE from "three";
 import gsap from "gsap";
 import { vertexShader, bgFragmentShader } from "./shaders.js";
-import { secretariesData, coreTeamData, departmentFilters, facultyLeadership, studentsInCharge } from "./teamData.js";
+import { secretariesData, coreTeamData, departmentFilters, facultyLeadership, currentStudentsInCharge, pastStudentSecretaries } from "./teamData.js";
 
 let bgRenderer, bgScene, bgCamera;
 let currentFilter = "all";
@@ -18,7 +18,8 @@ function init() {
   initPreloader();
   initFullscreenMenu();
   renderFacultyLeadership();
-  renderStudentsInCharge();
+  renderCurrentStudentsInCharge();
+  renderPastStudentSecretaries();
   renderSecretaries();
   renderFilterTabs();
   renderCoreTeam("all");
@@ -365,16 +366,36 @@ function renderFacultyLeadership() {
     .join("");
 }
 
-function renderStudentsInCharge() {
-  const container = document.getElementById("students-incharge-grid");
+function renderCurrentStudentsInCharge() {
+  const container = document.getElementById("current-students-grid");
   if (!container) return;
 
-  container.innerHTML = studentsInCharge
+  container.innerHTML = currentStudentsInCharge
     .map(
       (student) => `
-      <article class="student-card" data-id="${student.id}">
+      <article class="student-card current-bearer" data-id="${student.id}">
         <div>
-          <span class="student-badge ${student.status === "Active" ? "current" : "past"}">${student.tag}</span>
+          <span class="student-badge current">${student.tag}</span>
+          <h3 class="student-name">${student.name}</h3>
+          <p class="student-role">${student.role}</p>
+        </div>
+        <p class="student-dept">${student.department}</p>
+      </article>
+    `
+    )
+    .join("");
+}
+
+function renderPastStudentSecretaries() {
+  const container = document.getElementById("past-secretaries-grid");
+  if (!container) return;
+
+  container.innerHTML = pastStudentSecretaries
+    .map(
+      (student) => `
+      <article class="student-card past-bearer" data-id="${student.id}">
+        <div>
+          <span class="student-badge past">${student.tag}</span>
           <h3 class="student-name">${student.name}</h3>
           <p class="student-role">${student.role}</p>
         </div>

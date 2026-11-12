@@ -559,6 +559,42 @@ function renderCommittee() {
 // 5. BIND INTERACTION EVENTS
 // =============================================================
 function bindInteractionEvents() {
+  // 5.0 Festival Portal Switcher (Solutions 2K27 vs Tech Aakriti)
+  const btnSolutions = document.getElementById("btn-switch-solutions");
+  const btnAakriti = document.getElementById("btn-switch-aakriti");
+  const portalSolutions = document.getElementById("solutions-portal");
+  const portalAakriti = document.getElementById("aakriti-portal");
+
+  if (btnSolutions && btnAakriti && portalSolutions && portalAakriti) {
+    const switchTab = (fest) => {
+      if (fest === "aakriti") {
+        btnAakriti.classList.add("active");
+        btnSolutions.classList.remove("active");
+        portalAakriti.style.display = "block";
+        portalSolutions.style.display = "none";
+        if (window.location.hash !== "#tech-aakriti") {
+          history.replaceState(null, "", "#tech-aakriti");
+        }
+      } else {
+        btnSolutions.classList.add("active");
+        btnAakriti.classList.remove("active");
+        portalSolutions.style.display = "block";
+        portalAakriti.style.display = "none";
+        if (window.location.hash !== "#solutions") {
+          history.replaceState(null, "", "#solutions");
+        }
+      }
+    };
+
+    btnSolutions.addEventListener("click", () => switchTab("solutions"));
+    btnAakriti.addEventListener("click", () => switchTab("aakriti"));
+
+    if (window.location.hash === "#tech-aakriti") {
+      switchTab("aakriti");
+    } else {
+      switchTab("solutions");
+    }
+  }
   // 5.1 Tab Switching
   const tabBtns = document.querySelectorAll(".tab-btn");
   tabBtns.forEach((btn) => {

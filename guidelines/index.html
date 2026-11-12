@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Festival Guidelines | AIT Technical Board</title>
+  <title>Festival Guidelines &amp; Rulebooks | AIT Technical Board</title>
   <link rel="icon" type="image/png" href="/techboard-logo.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -13,46 +13,60 @@
   <link rel="stylesheet" href="/guidelines.css" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tech-board-2027.vercel.app/guidelines" />
-  <meta property="og:title" content="Festival Guidelines | AIT Technical Board" />
-  <meta property="og:description" content="Official Festival Guidelines and Regulations for SOLUTIONS 2K27 and Tech Aakriti. Army Institute of Technology, Pune." />
+  <meta property="og:title" content="Festival Guidelines &amp; Rulebooks | AIT Technical Board" />
+  <meta property="og:description"
+    content="Official Regulations and Rulebooks for SOLUTIONS 2K27 (Inter-College) and Technical Aakriti (Intra-College 4-Branch Championship). Army Institute of Technology, Pune." />
   <meta property="og:image" content="https://tech-board-2027.vercel.app/og-banner.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Festival Guidelines | AIT Technical Board" />
-  <meta name="twitter:description" content="Official Festival Guidelines and Regulations for SOLUTIONS 2K27 and Tech Aakriti. Army Institute of Technology, Pune." />
+  <meta name="twitter:title" content="Festival Guidelines &amp; Rulebooks | AIT Technical Board" />
+  <meta name="twitter:description"
+    content="Official Regulations and Rulebooks for SOLUTIONS 2K27 (Inter-College) and Technical Aakriti (Intra-College 4-Branch Championship). Army Institute of Technology, Pune." />
   <meta name="twitter:image" content="https://tech-board-2027.vercel.app/og-banner.png" />
   <link rel="canonical" href="https://tech-board-2027.vercel.app/guidelines" />
 </head>
 
-<body class="guidelines-page-body">
-  <!-- Preloader Screen: Spider Fill Animation -->
-  <div class="preloader" id="preloader" aria-label="Loading Guidelines">
+<body>
+  <!-- Fullscreen WebGL Crimson Streamlines Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Central Asset Preloader with Spider Fill -->
+  <div class="preloader" id="preloader">
     <div class="preloader-content">
-      <div class="spider-loader-container" id="spider-container">
-        <div class="spider-bg"></div>
-        <div class="spider-fill" id="spider-fill"></div>
+      <div class="spider-container" id="spider-container">
+        <svg class="spider-svg base" viewBox="0 0 100 100">
+          <path d="M50 15 C35 15 25 35 25 50 C25 65 35 85 50 85 C65 85 75 65 75 50 C75 35 65 15 50 15 Z" fill="none" stroke="#222" stroke-width="2"/>
+          <circle cx="50" cy="40" r="10" fill="#222"/>
+          <circle cx="50" cy="60" r="15" fill="#222"/>
+          <path d="M35 35 Q20 20 10 30 M35 45 Q15 45 5 50 M35 55 Q15 65 10 75 M65 35 Q80 20 90 30 M65 45 Q85 45 95 50 M65 55 Q85 65 90 75" fill="none" stroke="#222" stroke-width="2"/>
+        </svg>
+        <div class="spider-fill-wrapper" id="spider-fill">
+          <svg class="spider-svg fill" viewBox="0 0 100 100">
+            <path d="M50 15 C35 15 25 35 25 50 C25 65 35 85 50 85 C65 85 75 65 75 50 C75 35 65 15 50 15 Z" fill="none" stroke="#d91424" stroke-width="2"/>
+            <circle cx="50" cy="40" r="10" fill="#d91424"/>
+            <circle cx="50" cy="60" r="15" fill="#d91424"/>
+            <path d="M35 35 Q20 20 10 30 M35 45 Q15 45 5 50 M35 55 Q15 65 10 75 M65 35 Q80 20 90 30 M65 45 Q85 45 95 50 M65 55 Q85 65 90 75" fill="none" stroke="#d91424" stroke-width="2"/>
+          </svg>
+        </div>
       </div>
       <div class="preloader-text-wrapper" id="preloader-text-wrapper">
-        <p class="preloader-subtext">Entering Into AIT Technical Board...</p>
-        <div class="preloader-counter" id="preloader-counter">0%</div>
+        <span class="preloader-text">ENTERING FESTIVAL DIRECTORY</span>
+        <span class="preloader-counter" id="preloader-counter">0%</span>
       </div>
     </div>
   </div>
 
-  <!-- Global Ambient Three.js Canvas -->
-  <canvas id="bg-canvas"></canvas>
-
-  <!-- Top Navigation Header -->
+  <!-- Persistent Site Header (Logo Top-Left) -->
   <header class="site-header">
     <div class="header-left">
-      <a href="/" class="nav-logo-link" title="Return to Home">
+      <a href="/" class="nav-logo-link" title="AIT Technical Board Home">
         <img src="/techboard-logo.png" alt="AIT Technical Board" class="site-logo" />
       </a>
     </div>
   </header>
 
-  <!-- Top-Level Fixed Circular Glass Hamburger / Cross Toggle Button -->
+  <!-- Top-Level Fixed Hamburger/Cross Toggle Button -->
   <button class="menu" id="menu-btn" type="button" aria-label="Toggle navigation menu">
     <div class="hamburger-icon" id="hamburger-icon">
       <span class="ham-line line-top"></span>
@@ -76,9 +90,9 @@
           <span class="item-label">About Us</span>
           <span class="item-divider"></span>
         </a>
-        <a class="menu-item menu-highlight" href="/solutions" data-target="solutions">
+        <a class="menu-item" href="/solutions" data-target="solutions">
           <span class="item-index">03</span>
-          <span class="item-label">SOLUTIONS 2K27</span>
+          <span class="item-label">Solutions 2K27</span>
           <span class="item-divider"></span>
         </a>
         <a class="menu-item" href="/tech-aakriti" data-target="tech-aakriti">
@@ -88,49 +102,373 @@
         </a>
         <a class="menu-item" href="/team" data-target="team">
           <span class="item-index">05</span>
-          <span class="item-label">Team</span>
+          <span class="item-label">Our Team</span>
+          <span class="item-divider"></span>
+        </a>
+        <a class="menu-item" href="/guidelines" data-target="guidelines">
+          <span class="item-index">06</span>
+          <span class="item-label">Guidelines</span>
           <span class="item-divider"></span>
         </a>
         <a class="menu-item" href="/sponsors" data-target="sponsors">
-          <span class="item-index">06</span>
+          <span class="item-index">07</span>
           <span class="item-label">Sponsors</span>
           <span class="item-divider"></span>
         </a>
         <a class="menu-item" href="/contact" data-target="contact">
-          <span class="item-index">07</span>
-          <span class="item-label">Contact</span>
-          <span class="item-divider"></span>
-        </a>
-        <a class="menu-item active" href="/guidelines" data-target="guidelines">
           <span class="item-index">08</span>
-          <span class="item-label">Guidelines</span>
+          <span class="item-label">Contact</span>
           <span class="item-divider"></span>
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Main Guidelines Page Wrapper (Clean Festival Rollout Showcase) -->
-    <!-- Main Guidelines Page Wrapper (Exact Match to Design Mock) -->
-  <main class="guidelines-page-wrapper" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: clamp(4rem, 8vh, 6rem) clamp(1.5rem, 5vw, 4rem); box-sizing: border-box; position: relative; z-index: 10;">
-    <div class="guidelines-rollout-hero" style="max-width: 1100px; width: 100%; margin: auto 0;">
-      <h1 style="font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3.2rem, 8vw, 7.5rem); font-weight: 900; line-height: 0.95; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; margin: 0 auto;">
-        CURIOUS ABOUT THE<br>GUIDELINES?
+  <!-- Main Guidelines Container -->
+  <main class="guidelines-page-wrapper">
+    <!-- Header Section -->
+    <header class="guidelines-header-section">
+      <div class="guidelines-meta-tag">
+        <span class="tag-dot"></span>
+        <span>AIT TECHNICAL BOARD • REGULATORY DIRECTORY</span>
+      </div>
+      <h1 class="guidelines-main-heading">
+        FESTIVAL <span class="accent-text">GUIDELINES</span> &amp; RULEBOOKS
       </h1>
-      <div style="width: 76px; height: 2.5px; background: #d91424; margin: clamp(1.6rem, 3.2vh, 2.4rem) auto; border-radius: 2px; box-shadow: 0 0 14px rgba(217, 20, 36, 0.9);"></div>
-      <p style="font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.4rem, 3.2vw, 2.6rem); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #ea4856; margin: 0 auto; text-shadow: 0 0 25px rgba(217, 20, 36, 0.45);">
-        BE PATIENT WE'LL SOON ROLL THEM OUT.
+      <div class="guidelines-subtext-bar">
+        <p class="guidelines-subtext">
+          Authoritative rules, scoring formulas, issue resolution ladders, and event rulebooks governing the technical initiatives under Army Institute of Technology, Pune.
+        </p>
+      </div>
+
+      <!-- MASTER DUAL-FESTIVAL SWITCHER -->
+      <div class="festival-portal-switcher" id="festival-switcher">
+        <button type="button" class="portal-switch-btn active" id="btn-switch-solutions" data-target="solutions-portal">
+          <div class="switch-btn-inner">
+            <span class="switch-badge inter">INTER-COLLEGE NATIONAL FEST</span>
+            <span class="switch-title">SOLUTIONS 2K27</span>
+            <span class="switch-desc">Unstop Guidelines, Eligibility, Submissions &amp; Evaluation</span>
+          </div>
+        </button>
+        <button type="button" class="portal-switch-btn" id="btn-switch-aakriti" data-target="aakriti-portal">
+          <div class="switch-btn-inner">
+            <span class="switch-badge intra">AIT INTRA-COLLEGE CHAMPIONSHIP</span>
+            <span class="switch-title">TECH AAKRITI</span>
+            <span class="switch-desc">4-Branch Championship Rulebook (21 Disciplines)</span>
+          </div>
+        </button>
+      </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- PORTAL 1: SOLUTIONS 2K27 GUIDELINES (INTER-COLLEGE) -->
+    <!-- ========================================================= -->
+    <div class="festival-portal-content" id="solutions-portal">
+      <!-- Unstop Hero Card -->
+      <section class="sol-unstop-hero">
+        <div class="sol-hero-badge-row">
+          <span class="sol-live-tag"><span class="badge-dot-live"></span> REGISTRATIONS LIVE</span>
+          <span class="sol-portal-tag">OFFICIAL UNSTOP FESTIVAL</span>
+        </div>
+        <h2 class="sol-hero-title">SOLUTIONS 2K27 OFFICIAL REGULATIONS</h2>
+        <p class="sol-hero-desc">
+          SOLUTIONS 2K27 is the apex national inter-college technical festival of Army Institute of Technology, Pune. All registrations, team creations, problem statements, and round submissions are managed officially through Unstop.
+        </p>
+        <div class="sol-hero-actions">
+          <a href="https://unstop.com/college-fests/solutions-2k27-army-institute-of-technology-pune-542997?lb=WSgfyqIG&utm_medium=Share&utm_source=WhatsApp" target="_blank" rel="noopener noreferrer" class="sol-cta-primary">
+            <span>REGISTER ON UNSTOP (OFFICIAL)</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+          <a href="/solutions" class="sol-cta-secondary">
+            <span>VIEW 10 NATIONAL COMPETITIONS</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- 6 Regulatory Pillars of Solutions 2K27 -->
+      <div class="sol-rules-grid">
+        <article class="sol-rule-card">
+          <div class="sol-rule-icon">📝</div>
+          <h3 class="sol-rule-title">1. Registration &amp; Team Formation</h3>
+          <p class="sol-rule-desc">
+            All teams must register through the official Unstop festival page. Inter-college team formation is permitted across tracks to foster nationwide collaboration. Team sizes vary between 1 to 4 members depending on the specific competition track.
+          </p>
+        </article>
+
+        <article class="sol-rule-card">
+          <div class="sol-rule-icon">🎓</div>
+          <h3 class="sol-rule-title">2. Student Eligibility Criteria</h3>
+          <p class="sol-rule-desc">
+            Open to all currently enrolled undergraduate and postgraduate students from recognized technical institutions and universities across India. A valid college student ID card is mandatory for offline campus entry and prize disbursements.
+          </p>
+        </article>
+
+        <article class="sol-rule-card">
+          <div class="sol-rule-icon">⚡</div>
+          <h3 class="sol-rule-title">3. Hybrid Competition Rounds</h3>
+          <p class="sol-rule-desc">
+            Competitions consist of Round 1 (Online Prelims / Abstract / Code Submission on Unstop) followed by Round 2 (Offline Grand Finale at the AIT Pune campus). Shortlisted finalists will receive formal invitation letters for campus accommodation.
+          </p>
+        </article>
+
+        <article class="sol-rule-card">
+          <div class="sol-rule-icon">🛡️</div>
+          <h3 class="sol-rule-title">4. Originality &amp; Anti-Plagiarism</h3>
+          <p class="sol-rule-desc">
+            Submissions must represent original engineering work developed by the registered team. Use of pre-built commercial turnkey solutions or uncredited codebases will lead to immediate and irreversible disqualification by the technical jury.
+          </p>
+        </article>
+
+        <article class="sol-rule-card">
+          <div class="sol-rule-icon">⚖️</div>
+          <h3 class="sol-rule-title">5. Fair Play &amp; Judicial Integrity</h3>
+          <p class="sol-rule-desc">
+            Any tampering with tournament servers, interference with opponent hardware, or breach of the campus honor code will result in disqualification and notification to the participant's parent institution. All judge verdicts are final and binding.
+          </p>
+        </article>
+
+        <article class="sol-rule-card">
+          <div class="sol-rule-icon">📞</div>
+          <h3 class="sol-rule-title">6. Coordination &amp; Helpdesk</h3>
+          <p class="sol-rule-desc">
+            Official communications, schedule announcements, and shortlisted team notifications will be relayed through Unstop and registered emails. For festival grievances, contact the AIT Technical Board Secretariat via the <a href="/contact" style="color: #ea4856; text-decoration: underline;">Contact Directory</a>.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- PORTAL 2: TECH AAKRITI RULEBOOK (INTRA-COLLEGE 4-BRANCH) -->
+    <!-- ========================================================= -->
+    <div class="festival-portal-content" id="aakriti-portal" style="display: none;">
+      <!-- Header Section -->
+    <header class="guidelines-header-section">
+      <div class="guidelines-meta-tag">
+        <span class="tag-dot"></span>
+        <span>06 // OFFICIAL FEST REGULATIONS</span>
+      </div>
+      <h1 class="guidelines-main-heading">
+        GENERAL <span class="accent-text">GUIDELINES</span> &amp; RULEBOOK
+      </h1>
+      <div class="guidelines-subtext-bar">
+        <p class="guidelines-subtext">
+          Authoritative rules, scoring formulas, issue resolution hierarchy, and event rulebooks governing Technical Aakriti 2027 at Army Institute of Technology, Pune.
+        </p>
+        <div class="guidelines-actions-wrap">
+          <span class="guidelines-stats-badge">21 EVENTS • 4 BRANCHES</span>
+          <a href="/TB_FINAL(C).docx" download="Tech_Aakriti_2027_Official_Rulebook.docx" class="download-rulebook-btn" title="Download the original official docx rulebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>DOWNLOAD RULEBOOK (.DOCX)</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sticky Navigation & Search Control Bar -->
+    <div class="guidelines-control-bar">
+      <nav class="guidelines-tabs-nav" aria-label="Jump to section">
+        <button type="button" class="tab-btn active" data-target="general-protocol-section">General Protocol</button>
+        <button type="button" class="tab-btn" data-target="points-matrix-section">Points Matrix</button>
+        <button type="button" class="tab-btn" data-target="dispute-hierarchy-section">Dispute Ladder</button>
+        <button type="button" class="tab-btn" data-target="event-rulebooks-section">Event Rulebooks</button>
+        <button type="button" class="tab-btn" data-target="malpractices-section">Code of Conduct</button>
+        <button type="button" class="tab-btn" data-target="committee-section">Committee</button>
+      </nav>
+      <div class="guidelines-search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="guidelines-search-input" placeholder="Search rules, events, points..." autocomplete="off" />
+        <button type="button" class="clear-btn" id="search-clear-btn" style="display: none;" aria-label="Clear search">&times;</button>
+      </div>
+    </div>
+
+    <!-- Section 1: General Fest Guidelines -->
+    <section class="guidelines-section" id="general-protocol-section">
+      <div class="section-header-wrap">
+        <span class="section-index">01 //</span>
+        <h2 class="section-title">GENERAL FEST PROTOCOL</h2>
+      </div>
+      <p class="section-desc">
+        Essential guidelines regarding inauguration, nomination deadlines, mandatory ID requirements, and participant rosters applicable across all competitions.
       </p>
+      <div class="general-rules-grid" id="general-rules-container">
+        <!-- Injected dynamically via guidelines.js -->
+      </div>
+    </section>
+
+    <!-- Section 2: Points Distribution Matrix -->
+    <section class="guidelines-section" id="points-matrix-section">
+      <div class="section-header-wrap">
+        <span class="section-index">02 //</span>
+        <h2 class="section-title">POINTS DISTRIBUTION MATRIX</h2>
+      </div>
+      <p class="section-desc">
+        Official point allocation table across all 21 competitions for calculating inter-branch championship standings.
+      </p>
+      <div class="table-wrapper">
+        <table class="points-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Competition Name</th>
+              <th>Vertical</th>
+              <th>Points Allocation</th>
+              <th>Notes & Scoring Structure</th>
+            </tr>
+          </thead>
+          <tbody id="points-table-body">
+            <!-- Injected dynamically via guidelines.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mass Participation Formula Callout -->
+      <div class="formula-callout-box">
+        <div class="formula-left">
+          <h4>Mass Participation Bonus (+30 Pts)</h4>
+          <p>
+            For open mass events (TechMatrix & Placement Apti), +30 bonus points are awarded to the branch with the highest percentage of student body participation.
+          </p>
+          <div class="formula-code">
+            Participation % = (Branch Attendees Present) / (Branch Total Strength)
+          </div>
+        </div>
+        <div class="formula-right-list">
+          <div class="formula-item">
+            <span>Computer Engineering (COMP)</span>
+            <span class="str">480 Students</span>
+          </div>
+          <div class="formula-item">
+            <span>Electronics &amp; Telecom (E&amp;TC)</span>
+            <span class="str">480 Students</span>
+          </div>
+          <div class="formula-item">
+            <span>Information Technology (IT)</span>
+            <span class="str">420 Students</span>
+          </div>
+          <div class="formula-item">
+            <span>Mechanical + ARE</span>
+            <span class="str">360 Students</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: AIT Technical Board Issue Resolvement Hierarchy -->
+    <section class="guidelines-section" id="dispute-hierarchy-section">
+      <div class="section-header-wrap">
+        <span class="section-index">03 //</span>
+        <h2 class="section-title">ISSUE RESOLVEMENT HIERARCHY</h2>
+      </div>
+      <p class="section-desc">
+        Standard escalation procedure for protests, judging appeals, and scoring disputes. Every student and branch must follow this 6-level chain in sequential order.
+      </p>
+      <div class="hierarchy-chain-wrap" id="hierarchy-chain-container">
+        <!-- Injected dynamically via guidelines.js -->
+      </div>
+      <div class="hierarchy-warning-banner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <p class="hierarchy-warning-text">
+          <strong>STRICT REGULATION:</strong> In case of any hierarchical bypass by any participant, student, or branch, the participating branch will be penalized with an immediate negative award of <strong>-50 points</strong> with instantaneous effect.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Event-by-Event Rulebooks (Accordion) -->
+    <section class="guidelines-section" id="event-rulebooks-section">
+      <div class="section-header-wrap">
+        <span class="section-index">04 //</span>
+        <h2 class="section-title">EVENT-BY-EVENT RULEBOOKS</h2>
+      </div>
+      <p class="section-desc">
+        Detailed technical specifications, rounds, roster limits, device requirements, and evaluation criteria for each event.
+      </p>
+
+      <!-- Event Category Filter Chips -->
+      <div class="event-rules-filter-bar">
+        <button type="button" class="event-cat-filter-btn active" data-cat="all">All Events (21)</button>
+        <button type="button" class="event-cat-filter-btn" data-cat="coding">Coding (3)</button>
+        <button type="button" class="event-cat-filter-btn" data-cat="core">Core Engineering (3)</button>
+        <button type="button" class="event-cat-filter-btn" data-cat="mass">Mass Events (2)</button>
+        <button type="button" class="event-cat-filter-btn" data-cat="major">Major Flagships (5)</button>
+        <button type="button" class="event-cat-filter-btn" data-cat="open">Open Events (2)</button>
+        <button type="button" class="event-cat-filter-btn" data-cat="gaming">Esports &amp; Gaming (3)</button>
+      </div>
+
+      <!-- Accordion Container -->
+      <div class="event-accordion-list" id="event-accordion-container">
+        <!-- Injected dynamically via guidelines.js -->
+      </div>
+    </section>
+
+    <!-- Section 5: Disciplinary Rules & Malpractice Protocols -->
+    <section class="guidelines-section" id="malpractices-section">
+      <div class="section-header-wrap">
+        <span class="section-index">05 //</span>
+        <h2 class="section-title">DISCIPLINARY CODE &amp; MALPRACTICES</h2>
+      </div>
+      <p class="section-desc">
+        Prohibited conduct and associated branch point deductions to ensure absolute fairness, sportsmanship, and safety during Technical Aakriti 2027.
+      </p>
+      <div class="malpractice-grid" id="malpractices-grid-container">
+        <!-- Injected dynamically via guidelines.js -->
+      </div>
+    </section>
+
+    <!-- Section 6: Official Undertaking & Committee Sign-Off -->
+    <section class="guidelines-section" id="committee-section">
+      <div class="section-header-wrap">
+        <span class="section-index">06 //</span>
+        <h2 class="section-title">UNDERTAKING &amp; COMMITTEE SIGN-OFF</h2>
+      </div>
+      <p class="section-desc">
+        Ratified by the Branch Heads of all four participating branches, Technical Secretaries, and Faculty In-Charges of Army Institute of Technology, Pune.
+      </p>
+      <div class="committee-grid">
+        <div class="committee-card-block">
+          <h3 class="committee-block-title">
+            <span class="title-accent">01 //</span> PARTICIPATING BRANCHES
+          </h3>
+          <div class="committee-list" id="committee-branches-list">
+            <!-- Injected dynamically via guidelines.js -->
+          </div>
+        </div>
+        <div class="committee-card-block">
+          <h3 class="committee-block-title">
+            <span class="title-accent">02 //</span> TECHNICAL SECRETARIES
+          </h3>
+          <div class="committee-list" id="committee-secretaries-list">
+            <!-- Injected dynamically via guidelines.js -->
+          </div>
+        </div>
+        <div class="committee-card-block">
+          <h3 class="committee-block-title">
+            <span class="title-accent">03 //</span> FACULTY IN-CHARGE
+          </h3>
+          <div class="committee-list" id="committee-faculty-list">
+            <!-- Injected dynamically via guidelines.js -->
+          </div>
+        </div>
+      </div>
+    </section>
     </div>
   </main>
 
   <!-- Unified Site Footer -->
-  <!-- SECTION: INNOV8 FOOTER -->
   <footer class="site-footer" id="site-footer">
     <div class="footer-container">
-      <!-- Outer Card with the footermask.svg shape -->
       <div class="footer-card" id="footer-card">
-        <!-- Background SVG with custom crown tab shape and ambient streamlines -->
         <svg class="footer-card-shape" viewBox="0 0 1688 896" fill="none" preserveAspectRatio="none">
           <defs>
             <linearGradient id="footer-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -139,88 +477,49 @@
             </linearGradient>
             <linearGradient id="footer-border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="rgba(217, 20, 36, 0.45)" />
-              <stop offset="50%" stop-color="rgba(255, 255, 255, 0.18)" />
-              <stop offset="100%" stop-color="rgba(217, 20, 36, 0.35)" />
+              <stop offset="50%" stop-color="rgba(255, 255, 255, 0.08)" />
+              <stop offset="100%" stop-color="rgba(217, 20, 36, 0.2)" />
             </linearGradient>
-            <clipPath id="footer-card-clip" clipPathUnits="objectBoundingBox">
-              <path
-                d="M 0 0.0714 C 0 0.0513 0.0083 0.0357 0.019 0.0357 H 0.2607 C 0.2844 0.0357 0.3051 0.0246 0.3199 0.0089 C 0.3318 0.0022 0.3466 0 0.3643 0 H 0.6357 C 0.6534 0 0.6682 0.0022 0.6801 0.0089 C 0.6949 0.0246 0.7156 0.0357 0.7393 0.0357 H 0.9810 C 0.9917 0.0357 1 0.0513 1 0.0714 V 0.9286 C 1 0.9487 0.9917 0.9643 0.9810 0.9643 H 0.7393 C 0.7156 0.9643 0.6949 0.9754 0.6801 0.9911 C 0.6682 0.9978 0.6534 1 0.6357 1 H 0.3643 C 0.3466 1 0.3318 0.9978 0.3199 0.9911 C 0.3051 0.9754 0.2844 0.9643 0.2607 0.9643 H 0.019 C 0.0083 0.9643 0 0.9487 0 0.9286 Z" />
-            </clipPath>
           </defs>
-          <path
-            d="M0 50C0 32 14 18 32 18H440C480 18 515 10 540 4C560 1 585 0 615 0H1073C1103 0 1128 1 1148 4C1173 10 1208 18 1248 18H1656C1674 18 1688 32 1688 50V856C1688 878 1672 896 1650 896H38C16 896 0 878 0 856Z"
-            fill="url(#footer-card-grad)" stroke="url(#footer-border-grad)" stroke-width="2" />
-          <!-- Ambient Topography Streamlines inside Footer -->
-          <path d="M50 180 C400 100 800 280 1638 160" stroke="rgba(217, 20, 36, 0.22)" stroke-width="1.5"
-            stroke-dasharray="6 6" />
-          <path d="M50 360 C350 220 900 450 1638 300" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5" />
-          <path d="M50 540 C500 380 1100 620 1638 460" stroke="rgba(217, 20, 36, 0.18)" stroke-width="1.8" />
-          <path d="M50 700 C450 600 950 780 1638 640" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1.5"
-            stroke-dasharray="4 4" />
+          <path d="M 0 55 C 0 55, 45 55, 65 55 C 85 55, 110 50, 130 35 C 150 20, 175 0, 205 0 L 1483 0 C 1513 0, 1538 20, 1558 35 C 1578 50, 1603 55, 1623 55 C 1643 55, 1688 55, 1688 55 L 1688 896 L 0 896 Z" fill="url(#footer-card-grad)" stroke="url(#footer-border-grad)" stroke-width="1.5" />
         </svg>
 
-        <!-- In-Footer Top Crown Notch Innov8 Logo -->
         <div class="footer-notch-logo-container" id="footer-notch-logo-container">
-          <a href="/" class="footer-notch-logo-link" id="footer-notch-logo-link" title="Return to Home">
-            <img src="/techboard-logo.png" alt="AIT Technical Board" class="footer-notch-logo" />
-          </a>
+          <img src="/techboard-logo.png" alt="AIT Technical Board" class="footer-notch-logo" />
         </div>
 
-        <!-- Top/Center Tagline (WHERE BRILLIANCE / MEETS INNOVATION with block reveal) -->
-        <div class="footer-tagline-container" id="footer-tagline-container">
-          <h2 class="footer-tagline">
-            <div class="footer-block-reveal">
-              <span class="footer-tagline-line" id="footer-tagline-line1">WHERE BRILLIANCE</span>
-              <div class="footer-reveal-strip" id="footer-strip-1"></div>
+        <div class="footer-body">
+          <div class="footer-tagline-container">
+            <div class="footer-tagline-row">
+              <span class="footer-reveal-strip" id="footer-strip-1"></span>
+              <h2 class="footer-tagline-text" id="footer-tagline-line1">WHERE BRILLIANCE</h2>
             </div>
-            <div class="footer-block-reveal">
-              <span class="footer-tagline-line text-crimson" id="footer-tagline-line2">MEETS INNOVATION</span>
-              <div class="footer-reveal-strip" id="footer-strip-2"></div>
+            <div class="footer-tagline-row">
+              <span class="footer-reveal-strip" id="footer-strip-2"></span>
+              <h2 class="footer-tagline-text text-red" id="footer-tagline-line2">MEETS INNOVATION</h2>
             </div>
-          </h2>
+          </div>
+          <div class="footer-character-crop">
+            <img src="/footer.png" alt="Spider-Man Standing" class="footer-character-img" />
+          </div>
         </div>
 
-        <!-- Left Navigation Column: PAGES -->
-        <div class="footer-nav-col col-pages">
-          <span class="footer-col-label">PAGES</span>
-          <nav class="footer-links-list">
-            <a href="/" class="footer-link-pill" data-text="HOME">
-              <span class="footer-link-wrap" data-text="HOME">HOME</span>
-            </a>
-            <a href="/solutions" class="footer-link-pill" data-text="SOLUTIONS">
-              <span class="footer-link-wrap" data-text="SOLUTIONS">SOLUTIONS</span>
-            </a>
-            <a href="/tech-aakriti" class="footer-link-pill" data-text="TECH AAKRITI">
-              <span class="footer-link-wrap" data-text="TECH AAKRITI">TECH AAKRITI</span>
-            </a>
-            <a href="/team" class="footer-link-pill" data-text="TEAM">
-              <span class="footer-link-wrap" data-text="TEAM">TEAM</span>
-            </a>
-            <a href="/sponsors" class="footer-link-pill" data-text="SPONSORS">
-              <span class="footer-link-wrap" data-text="SPONSORS">SPONSORS</span>
-            </a>
-            <a href="/contact" class="footer-link-pill" data-text="CONTACT">
-              <span class="footer-link-wrap" data-text="CONTACT">CONTACT</span>
-            </a>
-            <a href="/guidelines" class="footer-link-pill" data-text="GUIDELINES">
-              <span class="footer-link-wrap" data-text="GUIDELINES">GUIDELINES</span>
-            </a>
-          </nav>
-        </div>
-
-        <!-- Right Navigation Column: FOLLOW ON -->
-        <div class="footer-nav-col col-socials">
-          <span class="footer-col-label">FOLLOW ON</span>
-          <nav class="footer-links-list">
-            <a href="https://www.youtube.com/@aitpune2505" target="_blank" rel="noopener noreferrer" class="footer-link-pill" data-text="YOUTUBE">
-              <span class="footer-link-wrap" data-text="YOUTUBE">YOUTUBE</span>
-            </a>
-            <a href="https://www.instagram.com/aittechnicalboard/" target="_blank" rel="noopener noreferrer" class="footer-link-pill"
-              data-text="INSTAGRAM">
+        <div class="footer-bottom-bar">
+          <div class="footer-copy">
+            <p>&copy; 2027 AIT TECHNICAL BOARD • ARMY INSTITUTE OF TECHNOLOGY, PUNE</p>
+            <p class="footer-subtext">SOLUTIONS 2K27 &amp; TECH AAKRITI • ALL RIGHTS RESERVED</p>
+          </div>
+          <nav class="footer-links-grid" aria-label="Social media and portals">
+            <a href="https://instagram.com/aittechnicalboard" target="_blank" rel="noopener noreferrer" class="footer-link-pill" data-text="INSTAGRAM">
               <span class="footer-link-wrap" data-text="INSTAGRAM">INSTAGRAM</span>
             </a>
-            <a href="https://www.linkedin.com/company/ait-technical-board" target="_blank" rel="noopener noreferrer" class="footer-link-pill"
-              data-text="LINKEDIN">
+            <a href="https://unstop.com/college-fests/solutions-2k27-army-institute-of-technology-pune-542997?lb=WSgfyqIG&utm_medium=Share&utm_source=WhatsApp" target="_blank" rel="noopener noreferrer" class="footer-link-pill" data-text="UNSTOP">
+              <span class="footer-link-wrap" data-text="UNSTOP">UNSTOP ↗</span>
+            </a>
+            <a href="https://github.com/janithe36/Tech-Board-2027" target="_blank" rel="noopener noreferrer" class="footer-link-pill" data-text="GITHUB">
+              <span class="footer-link-wrap" data-text="GITHUB">GITHUB</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link-pill" data-text="LINKEDIN">
               <span class="footer-link-wrap" data-text="LINKEDIN">LINKEDIN</span>
             </a>
             <a href="https://www.aitpune.com/TechnicalBoard.aspx" target="_blank" rel="noopener noreferrer" class="footer-link-pill" data-text="AIT PORTAL">
@@ -228,29 +527,6 @@
             </a>
           </nav>
         </div>
-
-        <!-- Center Cyborg Visual (footer.png) -->
-        <div class="footer-character-wrapper" id="footer-character-wrapper">
-          <img src="/footer.png" alt="AIT Technical Board" class="footer-character-img" loading="lazy" decoding="async" />
-        </div>
-
-        <!-- Bottom Venue CTA Button -->
-        <div class="footer-venue-cta-container">
-          <a href="https://maps.google.com/?q=Army+Institute+of+Technology+Pune" target="_blank" rel="noopener noreferrer" class="footer-venue-btn">
-            <span>VENUE</span>
-            <svg class="footer-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M7 17L17 7M17 7H7M17 7V17" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Bottom Copyright Bar -->
-      <div class="footer-bottom-bar">
-        <p class="footer-copyright">© AIT TECHNICAL BOARD. ARMY INSTITUTE OF TECHNOLOGY, PUNE. ALL RIGHTS RESERVED.</p>
-        <p class="footer-copyright footer-credits">
-          <a href="https://www.instagram.com/jani_the0036/" target="_blank" rel="noopener noreferrer" class="footer-dev-link">DEVELOPED BY JANI WITH ❤️</a>
-        </p>
       </div>
     </div>
   </footer>

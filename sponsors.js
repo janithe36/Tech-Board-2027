@@ -359,11 +359,12 @@ function renderSponsorsGrid() {
   const grid = document.getElementById("sponsors-grid");
   if (!grid) return;
 
-  grid.innerHTML = sponsorsData.map((sponsor) => {
+    grid.innerHTML = sponsorsData.map((sponsor) => {
     const scaleClass = getOpticalScaleClass(sponsor.aspectRatio, sponsor.id);
 
     return `
       <article class="sponsor-card" data-id="${sponsor.id}">
+        <span class="sponsor-tier-badge">${sponsor.badge || "OFFICIAL PARTNER"}</span>
         <div class="sponsor-stage">
           <img
             src="${sponsor.image}"
@@ -375,6 +376,7 @@ function renderSponsorsGrid() {
         </div>
         <div class="sponsor-details">
           <h3 class="sponsor-name">${sponsor.name}</h3>
+          <p class="sponsor-tier-label">${sponsor.tier || "Official Partner"}</p>
         </div>
       </article>
     `;

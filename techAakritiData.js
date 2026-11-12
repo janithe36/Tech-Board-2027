@@ -25,12 +25,21 @@ export const TECH_AAKRITI_METADATA = {
   totalEvents: 21,
   totalStrength: 1740,
   categories: [
-    { name: "Coding & Software", count: 3, examples: "Codehunt, Reverse Coding, Bug Hunt" },
-    { name: "Core Engineering", count: 3, examples: "Circuitrix, CAD Clash, Robo Soccer" },
-    { name: "Mass Events", count: 2, examples: "Technical Quiz, Branch Showcase" },
-    { name: "Major Flagships", count: 5, examples: "Hackathon, Robotics War, Innovation Expo" },
-    { name: "Open Category", count: 2, examples: "Tech Debate, Paper Presentation" },
-    { name: "Esports & Gaming", count: 3, examples: "Valorant, BGMI, FIFA" },
+    {
+      name: "Software & Coding",
+      count: 6,
+      examples: "Codehunt, Hackathon 24HR, Promptify, AI Arena, Among Bugs, Blink & Build",
+    },
+    {
+      name: "Hardware & Robotics",
+      count: 9,
+      examples: "Go-Karting, Robo Hurdle, Robo Soccer, Robowar (8kg, 15kg, 3lbs), RC Basher, RC Hurdle, Robo Sumo",
+    },
+    {
+      name: "Esports & Tactical Gaming",
+      count: 6,
+      examples: "Valorant, BGMI, Minecraft, FIFA, Tekken, Real Cricket",
+    },
   ],
 };
 
